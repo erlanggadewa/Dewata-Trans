@@ -4,7 +4,7 @@ Dewata Trans
 
 Erlangga : Backend
 Adam & Argu : Frontend
-ismi & regina : desain, proposal, ppt, bahan2 website
+Ismi & Regina : desain, proposal, ppt, bahan2 website
 
 Link Website :
 
