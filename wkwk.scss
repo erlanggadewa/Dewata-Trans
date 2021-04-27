@@ -1,0 +1,22 @@
+@import "responsive-web-design";
+
+body {
+  nav {
+    // background-color: aqua;
+    height: 200px;
+    .bjir1 {
+      background-color: red;
+      height: 200px;
+      //   width: 500px;
+    }
+    .bjir2 {
+      height: 200px;
+      background-color: yellow;
+    }
+    .bjir3 {
+      background-color: pink;
+      //   padding: 200px;
+      height: 50vh;
+    }
+  }
+}
