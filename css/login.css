@@ -24,12 +24,12 @@ body section {
 body section .outer {
   float: left;
   width: 40%;
-  padding: 10px;
+  padding: 40px;
 }
 
 body section .outer .login {
   background-color: white;
-  padding: 45px;
+  padding: 30px;
   border-radius: 15px;
   display: block;
   margin: auto;
@@ -39,8 +39,8 @@ body section .outer .login {
 body section .outer .login img {
   display: block;
   margin: auto;
-  width: 220px;
-  margin-bottom: 40px;
+  width: 165px;
+  margin-bottom: 30px;
 }
 
 body section .outer .login form input {
@@ -116,7 +116,7 @@ section::after {
   clear: both;
 }
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 1300px) {
   .dewataTrans {
     display: none;
   }
@@ -125,6 +125,12 @@ section::after {
   }
   body section {
     padding: 150px 0 0 0;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  body section .outer .login {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=login.css.map */
