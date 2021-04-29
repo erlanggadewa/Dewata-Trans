@@ -20,7 +20,7 @@ body {
   background-size: cover;
   section {
     // padding-top: 150px;
-    padding: 50px 50px 0 50px;
+    padding: 20px 20px 0 20px;
     height: 100vh;
     .outer {
       float: left;
@@ -137,16 +137,10 @@ section::after {
   body section .outer {
     width: 100%;
   }
-  body section {
-    padding: 50px 0 0 0;
-  }
 }
 
 @media only screen and (max-width: 490px) {
   body section .outer .login {
     width: 100%;
-  }
-  body section {
-    padding: 0;
   }
 }
