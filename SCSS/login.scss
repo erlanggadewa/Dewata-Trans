@@ -7,7 +7,9 @@
 }
 
 a {
-  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  // text-decoration: none;
 }
 
 body {
@@ -18,18 +20,21 @@ body {
   background-size: cover;
   section {
     // padding-top: 150px;
-    padding: 150px 100px 0 100px;
+    padding: 100px 100px 0 100px;
     height: 100vh;
     .outer {
       float: left;
       width: 40%;
-      // height: 100%;
+      height: 585px;
+      // line-height: 585px;
       padding: 40px;
+      // margin: auto;
       .login {
         background-color: white;
-        padding: 30px;
+        padding: 70px 30px;
         border-radius: 15px;
         display: block;
+        height: 100%;
         margin: auto;
         width: 400px;
         img {
@@ -77,17 +82,22 @@ body {
             color: #53a1cd;
           }
         }
+        p {
+          color: black;
+          text-align: left;
+          padding: 20px 0;
+        }
       }
       p {
         color: white;
         text-align: center;
-        padding: 10px;
+        padding: 15px;
       }
     }
     .dewataTrans {
       float: right;
       width: 60%;
-      padding: 20px;
+      padding: 70px;
       color: white;
       // height: 100%;
       h1 {
