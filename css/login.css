@@ -132,5 +132,8 @@ section::after {
   body section .outer .login {
     width: 100%;
   }
+  body section {
+    padding: 0;
+  }
 }
 /*# sourceMappingURL=login.css.map */
