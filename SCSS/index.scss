@@ -1,3 +1,5 @@
+@import "responsive-web-design";
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +15,7 @@ a {
 body {
   background-color: #ededed;
   .konten {
-    width: 82%;
+    width: 85vw;
     float: right;
     .dashboard {
       padding: 40px 20px 20px 20px;
