@@ -1,4 +1,5 @@
 <?php include "./_partials/head.php" ?>
+<link rel="stylesheet" href="../css/index.css" />
 
 <body>
   <?php include "navbar.php" ?>
@@ -36,9 +37,9 @@
       <div class="table" style="overflow-x:auto;">
         <table cellspacing="0">
           <tr>
-            <th>No</th>
-            <th>Mobil</th>
-            <th>Status</th>
+            <th style="border-right: 1px solid #ededed;">No</th>
+            <th style="border-right: 1px solid #ededed;">Mobil</th>
+            <th style="border-right: 1px solid #ededed;">Status</th>
             <th>Aksi</th>
           </tr>
           <tr>

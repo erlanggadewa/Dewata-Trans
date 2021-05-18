@@ -1,0 +1,52 @@
+* {
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #ededed;
+}
+
+body .konten {
+  width: 85vw;
+  float: right;
+}
+
+body .konten .dashboard {
+  padding: 40px 20px 20px 20px;
+}
+
+body .konten .dashboard h2 {
+  padding: 20px 0;
+  border-bottom: 2.5px solid #d6d6d6;
+}
+
+body .konten .dashboard table {
+  margin-top: 30px;
+  width: 100%;
+}
+
+body .konten .dashboard table tr,
+body .konten .dashboard table th,
+body .konten .dashboard table td {
+  padding: 20px;
+}
+
+body .konten .dashboard table td {
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+}
+
+body .konten .dashboard table th {
+  background-color: #53cd6e;
+  color: black;
+}
+/*# sourceMappingURL=ongoing.css.map */
