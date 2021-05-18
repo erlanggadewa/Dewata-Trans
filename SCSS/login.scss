@@ -1,0 +1,146 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  // border: 1px solid blue;
+}
+
+a {
+  color: black;
+  font-weight: bold;
+  // text-decoration: none;
+}
+
+body {
+  margin: 0;
+  // background-color: whitesmoke;
+  // background-image: url(https://wallpapercave.com/wp/wp4772274.jpg);
+  background-image: url(../img/cover_login.jpg);
+  background-size: cover;
+  section {
+    // padding-top: 150px;
+    padding: 20px 20px 0 20px;
+    height: 100vh;
+    .outer {
+      float: left;
+      width: 40%;
+      height: 585px;
+      // line-height: 585px;
+      padding: 40px;
+      // margin: auto;
+      .login {
+        background-color: white;
+        padding: 70px 30px;
+        border-radius: 15px;
+        display: block;
+        height: 100%;
+        margin: auto;
+        width: 400px;
+        img {
+          display: block;
+          margin: auto;
+          width: 165px;
+          margin-bottom: 30px;
+        }
+        // h1 {
+        //   color: black;
+        //   text-align: center;
+        //   padding-bottom: 45px;
+        //   border-bottom: 1px solid #c0c0c0;
+        //   font-size: 2.5rem;
+        // }
+        form {
+          input {
+            // background-color: #1b1717;
+            border-radius: 10px;
+            border: 1px solid black;
+            padding: 15px 20px;
+            font-size: 16px;
+            display: block;
+            margin: auto;
+            outline: 0;
+            width: 100%;
+            // height: 50px;
+          }
+          button {
+            color: white;
+            background-color: #53a1cd;
+            border-radius: 8px;
+            border: 2px solid #53a1cd;
+            height: 50px;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+          }
+          button:hover {
+            background-color: transparent;
+            color: #53a1cd;
+          }
+        }
+        p {
+          color: black;
+          text-align: left;
+          padding: 20px 0;
+        }
+      }
+      p {
+        color: white;
+        text-align: center;
+        padding: 15px;
+      }
+    }
+    .dewataTrans {
+      float: right;
+      width: 60%;
+      padding: 70px;
+      color: white;
+      // height: 100%;
+      h1 {
+        margin: 0;
+        // margin-top: 30px;
+        font-size: 37pt;
+      }
+      p {
+        font-size: 15pt;
+        line-height: 1.5;
+        // margin-bottom: 50px;
+      }
+      a {
+        color: white;
+        background-color: #53a1cd;
+        padding: 15px 30px;
+        border-radius: 10px;
+      }
+      img {
+        float: right;
+        width: 540px;
+      }
+    }
+  }
+}
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media only screen and (max-width: 1300px) {
+  .dewataTrans {
+    display: none;
+  }
+  body section .outer {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  body section .outer .login {
+    width: 100%;
+  }
+}

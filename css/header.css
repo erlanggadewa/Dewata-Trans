@@ -1,0 +1,19 @@
+body header {
+  height: 70px;
+  background-color: #97bfd6;
+}
+
+body header .admin a {
+  line-height: 70px;
+  float: right;
+  color: white;
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+body header .admin img {
+  float: right;
+  width: 50px;
+  margin: 10px 20px 10px 10px;
+}
+/*# sourceMappingURL=header.css.map */
