@@ -1,0 +1,76 @@
+* {
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  // border: 1px solid blue;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #ededed;
+  .konten {
+    width: 85vw;
+    float: right;
+    .dataPesanan {
+      padding: 40px 20px 20px 20px;
+      h2 {
+        padding: 20px 0;
+        border-bottom: 2.5px solid #d6d6d6;
+      }
+      .detailPesanan {
+        margin-top: 25px;
+        // padding: 15px;
+        // border-radius: 10px;
+        background-color: white;
+        h3 {
+          color: white;
+          padding: 15px 30px;
+          background-color: #97bfd6;
+          //   border-radius: 10px;
+        }
+        .data {
+          // width: 85%;
+          padding: 30px;
+          p {
+            color: #8d8c8c;
+            margin-bottom: 12px;
+          }
+        }
+        .buttons {
+          display: flex;
+          justify-content: flex-end;
+          padding: 30px;
+          margin-top: 40px;
+          button {
+            padding: 8px 12px;
+            margin: 0 5px;
+            color: white;
+            border: 0;
+            border-radius: 10px;
+          }
+          .ubah {
+            background-color: #284b69;
+          }
+          .hapus {
+            background-color: #dd4c3c;
+          }
+          .print {
+            background-color: #53cd6e;
+          }
+          .kembali {
+            background-color: #8d8c8c;
+          }
+          button:hover {
+            opacity: 0.7;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

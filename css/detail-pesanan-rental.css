@@ -1,0 +1,106 @@
+* {
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #ededed;
+}
+
+body .konten {
+  width: 85vw;
+  float: right;
+}
+
+body .konten .dataPesanan {
+  padding: 40px 20px 20px 20px;
+}
+
+body .konten .dataPesanan h2 {
+  padding: 20px 0;
+  border-bottom: 2.5px solid #d6d6d6;
+}
+
+body .konten .dataPesanan .detailPesanan {
+  margin-top: 25px;
+  background-color: white;
+}
+
+body .konten .dataPesanan .detailPesanan h3 {
+  color: white;
+  padding: 15px 30px;
+  background-color: #97bfd6;
+}
+
+body .konten .dataPesanan .detailPesanan .detail {
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .konten .dataPesanan .detailPesanan .detail .foto {
+  width: 150px;
+}
+
+body .konten .dataPesanan .detailPesanan .detail .foto img {
+  width: 100%;
+}
+
+body .konten .dataPesanan .detailPesanan .detail .data {
+  padding-left: 30px;
+}
+
+body .konten .dataPesanan .detailPesanan .detail .data p {
+  color: #8d8c8c;
+  margin-bottom: 12px;
+}
+
+body .konten .dataPesanan .detailPesanan .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 30px;
+  margin-top: 40px;
+}
+
+body .konten .dataPesanan .detailPesanan .buttons button {
+  padding: 8px 12px;
+  margin: 0 5px;
+  color: white;
+  border: 0;
+  border-radius: 10px;
+}
+
+body .konten .dataPesanan .detailPesanan .buttons .ubah {
+  background-color: #284b69;
+}
+
+body .konten .dataPesanan .detailPesanan .buttons .hapus {
+  background-color: #dd4c3c;
+}
+
+body .konten .dataPesanan .detailPesanan .buttons .print {
+  background-color: #53cd6e;
+}
+
+body .konten .dataPesanan .detailPesanan .buttons .kembali {
+  background-color: #8d8c8c;
+}
+
+body .konten .dataPesanan .detailPesanan .buttons button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+/*# sourceMappingURL=data-pesanan-rental.css.map */

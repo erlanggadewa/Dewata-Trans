@@ -6,7 +6,7 @@
     <?php include "header.php" ?>
     <div class="konten">
     
-      <div class="dashboard">
+      <div class="pending">
         <h2>Data Mobil yang Pending</h2>
 
         <table cellspacing="0">
