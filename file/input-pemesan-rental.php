@@ -6,14 +6,14 @@
   <?php include "header.php" ?>
 
   <div class="konten">
-    <div class="dataPesanan">
+    <div class="inputPemesan">
       <h2>Input Data Pemesan</h2>
 
-      <div class="detailPesanan">
+      <div class="inputDataPemesan">
         <h3>Input Data Pemesan</h3>
 
         <div class="detail">
-          <div class="foto">
+          <div class="col1">
             <label for="nama">Nama Penyewa</label>
             <input
             class="input"
@@ -74,7 +74,7 @@
             </form>
           </div>
 
-          <div class="data">
+          <div class="col2">
             <label for="kotaAsal">Kota Asal</label>
             <input
             class="input"

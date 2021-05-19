@@ -44,66 +44,66 @@ body .konten {
   float: right;
 }
 
-body .konten .dataPesanan {
+body .konten .inputPemesan {
   padding: 20px;
 }
 
-body .konten .dataPesanan h2 {
+body .konten .inputPemesan h2 {
   padding: 20px 0;
   border-bottom: 2.5px solid #d6d6d6;
 }
 
-body .konten .dataPesanan .detailPesanan {
+body .konten .inputPemesan .inputDataPemesan {
   margin-top: 25px;
   background-color: white;
 }
 
-body .konten .dataPesanan .detailPesanan h3 {
+body .konten .inputPemesan .inputDataPemesan h3 {
   color: white;
   padding: 15px 30px;
   background-color: #97bfd6;
 }
 
-body .konten .dataPesanan .detailPesanan .detail {
+body .konten .inputPemesan .inputDataPemesan .detail {
   padding: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-body .konten .dataPesanan .detailPesanan .detail .foto {
+body .konten .inputPemesan .inputDataPemesan .detail .col1 {
   width: 50%;
   padding-right: 20px;
   border-right: 2px solid #d6d6d6;
 }
 
-body .konten .dataPesanan .detailPesanan .detail .foto .nohpKelamin {
+body .konten .inputPemesan .inputDataPemesan .detail .col1 .nohpKelamin {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-body .konten .dataPesanan .detailPesanan .detail .foto .nohpKelamin .nohp {
+body .konten .inputPemesan .inputDataPemesan .detail .col1 .nohpKelamin .nohp {
   width: 50%;
   margin-right: 10px;
 }
 
-body .konten .dataPesanan .detailPesanan .detail .foto .nohpKelamin .kelamin {
+body .konten .inputPemesan .inputDataPemesan .detail .col1 .nohpKelamin .kelamin {
   width: 50%;
   margin-left: 10px;
 }
 
-body .konten .dataPesanan .detailPesanan .detail .data {
+body .konten .inputPemesan .inputDataPemesan .detail .col2 {
   width: 50%;
   padding-left: 30px;
 }
 
-body .konten .dataPesanan .detailPesanan .detail .data p {
+body .konten .inputPemesan .inputDataPemesan .detail .col2 p {
   color: #8d8c8c;
   margin-bottom: 12px;
 }
 
-body .konten .dataPesanan .detailPesanan .buttons {
+body .konten .inputPemesan .inputDataPemesan .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -113,7 +113,7 @@ body .konten .dataPesanan .detailPesanan .buttons {
   padding: 30px;
 }
 
-body .konten .dataPesanan .detailPesanan .buttons button {
+body .konten .inputPemesan .inputDataPemesan .buttons button {
   padding: 8px 12px;
   margin: 0 5px;
   color: white;
@@ -121,15 +121,15 @@ body .konten .dataPesanan .detailPesanan .buttons button {
   border-radius: 10px;
 }
 
-body .konten .dataPesanan .detailPesanan .buttons .submit {
+body .konten .inputPemesan .inputDataPemesan .buttons .submit {
   background-color: #53cd6e;
 }
 
-body .konten .dataPesanan .detailPesanan .buttons .cancel {
+body .konten .inputPemesan .inputDataPemesan .buttons .cancel {
   background-color: #dd4c3c;
 }
 
-body .konten .dataPesanan .detailPesanan .buttons button:hover {
+body .konten .inputPemesan .inputDataPemesan .buttons button:hover {
   opacity: 0.7;
   cursor: pointer;
 }
