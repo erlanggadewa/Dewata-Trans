@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 1px solid blue;
+  // border: 1px solid blue;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -26,9 +26,11 @@ body {
       .wrapper {
         // margin-top: 30px;
         // text-align: center;
+        display: flex;
+        justify-content: space-between;
         .wrapperData {
-          display: inline-block;
-          width: 32.7%;
+          // display: flex;
+          // width: 32.7%;
           div {
             width: 300px;
             background-color: white;
@@ -70,8 +72,8 @@ body {
   }
 }
 
-@media only screen and (max-width: 1300px) {
-  body .konten .dashboard .wrapper .wrapperData {
-    width: 335px;
+@media (max-width: 1200px) {
+  .wrapper {
+    flex-direction: column;
   }
 }
