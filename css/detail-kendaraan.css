@@ -91,10 +91,6 @@ body .konten .dataPesanan .detailPesanan .buttons .hapus {
   background-color: #dd4c3c;
 }
 
-body .konten .dataPesanan .detailPesanan .buttons .print {
-  background-color: #53cd6e;
-}
-
 body .konten .dataPesanan .detailPesanan .buttons .kembali {
   background-color: #8d8c8c;
 }
@@ -103,4 +99,4 @@ body .konten .dataPesanan .detailPesanan .buttons button:hover {
   opacity: 0.7;
   cursor: pointer;
 }
-/*# sourceMappingURL=detail-pesanan-rental.css.map */
+/*# sourceMappingURL=detail-kendaraan.css.map */

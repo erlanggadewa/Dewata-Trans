@@ -4,8 +4,8 @@
   <body>
     <?php include "navbar.php" ?>
     <?php include "header.php" ?>
+
     <div class="konten">
-    
       <div class="dataPesanan">
         <h2>Detail Pesanan</h2>
 
