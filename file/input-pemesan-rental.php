@@ -92,13 +92,13 @@
             />
 
             <label for="pilihMobil">Pilih Mobil</label>
-            <select name="hobi" id="pilihMobil">
+            <select name="pilihMobil" id="pilihMobil">
                 <option value="">--Pilih Mobil--</option>
-                <option value="1">1. Komputer</option>
-                <option value="2" selected>2. Otomotif</option>
-                <option value="3">3. Memasak</option>
-                <option value="4">4. Melukis</option>
-                <option value="5">5. Bernyanyi</option>
+                <option value="1">1. aaa</option>
+                <option value="2" selected>2. iii</option>
+                <option value="3">3. uuu</option>
+                <option value="4">4. eee</option>
+                <option value="5">5. ooo</option>
             </select>
 
             <label for="harga">Harga</label>
