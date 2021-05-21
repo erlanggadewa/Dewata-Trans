@@ -1,0 +1,27 @@
+$warna1: #2c445a;
+$warna2: #ededed;
+$warna3: #97bfd6;
+
+body {
+  header {
+    background-color: $warna3;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 90%;
+    position: fixed;
+  }
+  .row {
+    .sidebar {
+      z-index: 9999;
+      background-color: $warna1;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+  }
+}
