@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "MyWebFont";
+  src: url("../asset/Calibri.ttf") format("truetype");
+}
 $warna1: #2c445a;
 $warna2: #ededed;
 $warna3: #97bfd6;
@@ -16,11 +20,53 @@ body {
       z-index: 9999;
       background-color: $warna1;
       height: 100vh;
-      display: flex;
-      flex-direction: column;
+      font-family: "myWebFont";
+
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      & {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
       img {
         width: 100%;
         margin: 10px 0;
+      }
+      .navbar {
+        font-size: calc(1vw + 0.3rem);
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: auto;
+        justify-content: space-around;
+        color: white;
+        .fas {
+          span {
+            font-family: "myWebFont";
+          }
+        }
+        .grup-nav {
+          display: flex;
+          flex-direction: column;
+          margin: 30px 0 0 0;
+          h6 {
+            font-size: calc(0.8vw + 0.3rem);
+          }
+          .fas {
+            margin: 4px 0;
+            font-size: calc(1vw + 0.3rem);
+            span {
+              font-family: "myWebFont";
+            }
+          }
+        }
       }
     }
   }

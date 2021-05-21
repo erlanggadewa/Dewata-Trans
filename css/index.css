@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "MyWebFont";
+  src: url("../asset/Calibri.ttf") format("truetype");
+}
 body header {
   background-color: #97bfd6;
   top: 0;
@@ -10,6 +14,26 @@ body .row .sidebar {
   z-index: 9999;
   background-color: #2c445a;
   height: 100vh;
+  font-family: "myWebFont";
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  /* Hide scrollbar for IE, Edge and Firefox */
+}
+body .row .sidebar::-webkit-scrollbar {
+  display: none;
+}
+body .row .sidebar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+body .row .sidebar img {
+  width: 100%;
+  margin: 10px 0;
+}
+body .row .sidebar .navbar {
+  font-size: calc(1vw + 0.3rem);
+  margin-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,8 +41,33 @@ body .row .sidebar {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: auto;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: white;
 }
-body .row .sidebar img {
-  width: 100%;
-  margin: 10px 0;
+body .row .sidebar .navbar .fas span {
+  font-family: "myWebFont";
+}
+body .row .sidebar .navbar .grup-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 30px 0 0 0;
+}
+body .row .sidebar .navbar .grup-nav h6 {
+  font-size: calc(0.8vw + 0.3rem);
+}
+body .row .sidebar .navbar .grup-nav .fas {
+  margin: 4px 0;
+  font-size: calc(1vw + 0.3rem);
+}
+body .row .sidebar .navbar .grup-nav .fas span {
+  font-family: "myWebFont";
 }
