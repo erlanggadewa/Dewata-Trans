@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../css/dashboard.min.css">
+
 <h1>Dashboard Aplikasi Rental Mobil</h1>
 <hr>
 <div class="row wrapper-data">
@@ -29,4 +30,42 @@
             <i class="fas fa-server"></i>
         </div>
     </div>
+</div>
+<div class="row wrapper-table" style="overflow-x:auto;">
+    <table class="styled-table col-12">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Mobil</th>
+                <th>Status</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Toyota</td>
+                <td>Tersedia</td>
+                <td><i class="fas fa-eye"></i></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Toyota</td>
+                <td>Tersedia</td>
+                <td><i class="fas fa-eye"></i></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Toyota</td>
+                <td>Tersedia</td>
+                <td><i class="fas fa-eye"></i></td>
+            </tr>
+            <tr class="active-row">
+                <td>2</td>
+                <td>Toyota</td>
+                <td>Tersedia</td>
+                <td><i class="fas fa-eye"></i></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
