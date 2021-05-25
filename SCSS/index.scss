@@ -9,16 +9,18 @@ $warna3: #97bfd6;
 
 body {
   header {
-    background-color: $warna3;
+    background-color: $warna1;
     top: 0;
     right: 0;
     left: 0;
     bottom: 90%;
     position: fixed;
+    z-index: 1;
+    box-shadow: 0px 9px 41px -23px rgba(0, 0, 0, 0.75);
   }
   .container-fluid {
     .row {
-      .relative {
+      .wrapper-sidebar {
         position: relative;
         height: 100vh;
         .sidebar {
@@ -91,6 +93,7 @@ body {
               display: flex;
               flex-direction: column;
               margin: 30px 0 0 0;
+
               h6 {
                 font-size: calc(0.8vw + 0.3rem);
               }
@@ -98,8 +101,14 @@ body {
                 margin: 0 20px 10px 0px;
               }
               .fas {
-                margin: 4px 0;
+                margin-left: -10px;
+                padding: 10px;
+                cursor: pointer;
                 font-size: calc(1vw + 0.3rem);
+                &:hover {
+                  background-color: $warna2;
+                  color: $warna1;
+                }
                 span {
                   font-family: "myWebFont";
                 }
@@ -119,7 +128,7 @@ body {
   body {
     .container-fluid {
       .row {
-        .relative {
+        .wrapper-sidebar {
           .sidebar {
             .navbar {
               .grup-nav {
@@ -142,12 +151,27 @@ body {
     }
   }
 }
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 576px) {
   body {
     background-color: $warna1;
-    .container-fluid {
+    header {
+      display: flex;
+      align-items: center;
+      i {
+        font-size: 8vw;
+        margin: 0 7% 0 5%;
+        color: $warna2;
+      }
+      img {
+        // margin-top: -10px;
+        display: inline-block;
+        width: 70%;
+        // height: calc();
+      }
+    }
+    .wrapper-all {
       .row {
-        .relative {
+        .wrapper-sidebar {
           position: absolute;
           .sidebar {
             background-color: white;

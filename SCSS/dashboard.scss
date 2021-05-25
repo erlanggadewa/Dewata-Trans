@@ -9,8 +9,13 @@ $warna3: #97bfd6;
 
 body {
   h1 {
-    margin-top: 20px;
+    margin: 15px 0 0 20px;
     font-weight: bold;
+    color: $warna1;
+  }
+  hr {
+    margin-left: 20px;
+    width: 87%;
   }
   .wrapper-data {
     .data1 {
@@ -41,10 +46,12 @@ body {
           margin-left: 10px;
           h3 {
             font-weight: bold;
+            color: $warna1;
           }
         }
         .fas {
           font-size: calc(2vw + 2rem);
+          color: rgb(129, 129, 129);
         }
       }
     }
@@ -76,10 +83,12 @@ body {
           margin-left: 10px;
           h3 {
             font-weight: bold;
+            color: $warna1;
           }
         }
         .fas {
           font-size: calc(2vw + 1.7rem);
+          color: rgb(129, 129, 129);
         }
       }
     }
@@ -111,10 +120,12 @@ body {
           margin-left: 10px;
           h3 {
             font-weight: bold;
+            color: $warna1;
           }
         }
         .fas {
           font-size: calc(2vw + 2rem);
+          color: rgb(129, 129, 129);
         }
       }
     }
@@ -143,7 +154,7 @@ body {
       border-bottom: 1px solid #dddddd;
     }
 
-    .styled-table tbody tr:nth-of-type(even) {
+    .styled-table tbody tr {
       background-color: #f3f3f3;
     }
 
@@ -157,8 +168,17 @@ body {
   }
 }
 
-// @media only screen and (max-width: 768px) {
-//   body {
-//     background-color: $warna1;
-//   }
-// }
+@media only screen and (max-width: 576px) {
+  body {
+    h1 {
+      margin: 15vh 0 0 20px;
+      color: $warna2;
+    }
+    hr {
+      color: white;
+    }
+    .wrapper-data {
+      color: $warna1;
+    }
+  }
+}
