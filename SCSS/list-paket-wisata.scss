@@ -1,0 +1,141 @@
+@font-face {
+  font-family: "MyWebFont";
+  src: url("../asset/Calibri.ttf") format("truetype");
+}
+@font-face {
+  font-family: "MyWebFont2";
+  src: url("../asset/OpenSans-Regular.ttf") format("truetype");
+}
+
+$warna1: #2c445a;
+$warna2: #ededed;
+$warna3: #97bfd6;
+
+body {
+  font-family: "MyWebFont";
+  h1 {
+    margin: 15px 0 0 20px;
+    font-weight: bold;
+    color: $warna1;
+  }
+  hr {
+    margin-bottom: 30px;
+  }
+  .wrapper-all {
+    .input-kendaraan {
+      .wrapper-tambah {
+        background-color: white;
+        box-shadow: 0 0 10px rgb(90, 90, 90);
+        margin: 0 0 20px 0;
+        h4 {
+          color: white;
+          font-weight: bold;
+          padding: 5px 10px;
+          background-color: $warna3;
+        }
+        form {
+          .container {
+            .row {
+              .form-group {
+                margin: 10px 0;
+                label {
+                  font-family: "MyWebFont2";
+                  color: $warna1;
+                  margin-bottom: 7px;
+                  font-size: 0.8rem;
+                  font-weight: bold;
+                }
+              }
+              .wrapper-button {
+                text-align: right;
+                margin-bottom: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .data-kendaraan {
+      .wrapper-daftar {
+        background-color: white;
+        box-shadow: 0 0 10px rgb(90, 90, 90);
+        margin: 0 0 20px 0;
+        h4 {
+          color: white;
+          font-weight: bold;
+          padding: 5px 10px;
+          background-color: $warna3;
+        }
+        .form-group {
+          margin-top: 20px;
+        }
+        .wrapper-table {
+          padding: 0 10px;
+          .styled-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            width: 100%;
+            min-width: 400px;
+            box-shadow: 0 0 10px rgb(90, 90, 90);
+          }
+          .styled-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+          }
+          .styled-table th,
+          .styled-table td {
+            padding: 12px 15px;
+          }
+          .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+          }
+
+          .styled-table tbody tr {
+            background-color: #f3f3f3;
+          }
+
+          .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+          }
+          .styled-table tbody tr.active-row {
+            font-weight: bold;
+            color: #009879;
+          }
+        }
+        .wrapper-pagination {
+          padding-bottom: 50px;
+          position: relative;
+          p {
+            position: absolute;
+            left: 0;
+            color: $warna1;
+          }
+          .pagination {
+            position: absolute;
+            right: 0;
+            font-size: 1.4rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            i {
+              color: $warna3;
+              &:hover {
+                color: $warna1;
+                cursor: pointer;
+              }
+            }
+            h6 {
+              font-size: 1rem;
+              margin: 0 6px;
+              color: #2c445a;
+              text-shadow: 0 0 1px black;
+            }
+          }
+        }
+      }
+    }
+  }
+}

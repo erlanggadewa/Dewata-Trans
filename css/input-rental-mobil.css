@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "MyWebFont";
+  src: url("../asset/Calibri.ttf") format("truetype");
+}
+@font-face {
+  font-family: "MyWebFont2";
+  src: url("../asset/OpenSans-Regular.ttf") format("truetype");
+}
+body {
+  font-family: "MyWebFont";
+}
+body h1 {
+  margin: 15px 0 0 20px;
+  font-weight: bold;
+  color: #2c445a;
+}
+body hr {
+  margin-bottom: 30px;
+}
+body .wrapper-tambah {
+  background-color: white;
+  -webkit-box-shadow: 0 0 10px #5a5a5a;
+          box-shadow: 0 0 10px #5a5a5a;
+  margin: 0 0 20px 0;
+}
+body .wrapper-tambah h4 {
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  background-color: #97bfd6;
+}
+body .wrapper-tambah form .container .row .form-group {
+  margin: 10px 0;
+}
+body .wrapper-tambah form .container .row .form-group label {
+  font-family: "MyWebFont2";
+  color: #2c445a;
+  margin-bottom: 7px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+body .wrapper-tambah form .container .row .wrapper-button {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 576px) {
+  body {
+    font-family: "MyWebFont";
+  }
+  body h1 {
+    margin: 15vh 0 0 20px;
+    font-weight: bold;
+    color: #ededed;
+  }
+  body hr {
+    color: white;
+  }
+}

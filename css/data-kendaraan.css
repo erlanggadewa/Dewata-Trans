@@ -1,0 +1,151 @@
+@font-face {
+  font-family: "MyWebFont";
+  src: url("../asset/Calibri.ttf") format("truetype");
+}
+@font-face {
+  font-family: "MyWebFont2";
+  src: url("../asset/OpenSans-Regular.ttf") format("truetype");
+}
+body {
+  font-family: "MyWebFont";
+}
+body h1 {
+  margin: 15px 0 0 20px;
+  font-weight: bold;
+  color: #2c445a;
+}
+body hr {
+  margin-left: 20px;
+  width: 87%;
+  margin-bottom: 30px;
+}
+body .wrapper-all .input-kendaraan .wrapper-tambah {
+  background-color: white;
+  -webkit-box-shadow: 0 0 10px #5a5a5a;
+          box-shadow: 0 0 10px #5a5a5a;
+  margin: 0 0 20px 0;
+}
+body .wrapper-all .input-kendaraan .wrapper-tambah h4 {
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  background-color: #97bfd6;
+}
+body .wrapper-all .input-kendaraan .wrapper-tambah form .container .row .form-group {
+  margin: 10px 0;
+}
+body .wrapper-all .input-kendaraan .wrapper-tambah form .container .row .form-group label {
+  font-family: "MyWebFont2";
+  color: #2c445a;
+  margin-bottom: 7px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+body .wrapper-all .input-kendaraan .wrapper-tambah form .container .row .wrapper-button {
+  text-align: right;
+  margin-bottom: 20px;
+}
+body .wrapper-all .data-kendaraan .wrapper-daftar {
+  background-color: white;
+  -webkit-box-shadow: 0 0 10px #5a5a5a;
+          box-shadow: 0 0 10px #5a5a5a;
+  margin: 0 0 20px 0;
+}
+body .wrapper-all .data-kendaraan .wrapper-daftar h4 {
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  background-color: #97bfd6;
+}
+body .wrapper-all .data-kendaraan .wrapper-daftar .form-group {
+  margin-top: 20px;
+}
+body .wrapper-all .data-kendaraan .wrapper-daftar .wrapper-table {
+  padding: 0 10px;
+}
+body .wrapper-all .data-kendaraan .wrapper-daftar .wrapper-table .styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  width: 100%;
+  min-width: 400px;
+  -webkit-box-shadow: 0 0 10px #5a5a5a;
+          box-shadow: 0 0 10px #5a5a5a;
+}
+body .wrapper-all .data-kendaraan .wrapper-daftar .wrapper-table .styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+body .wrapper-all .data-kendaraan .wrapper-daftar .wrapper-table .styled-table th,
+body .wrapper-all .data-kendaraan .wrapper-daftar .wrapper-table .styled-table td {
+  padding: 12px 15px;
+}
+body .wrapper-all .data-kendaraan .wrapper-daftar .wrapper-table .styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+body .wrapper-all .data-kendaraan .wrapper-daftar .wrapper-table .styled-table tbody tr {
+  background-color: #f3f3f3;
+}
+body .wrapper-all .data-kendaraan .wrapper-daftar .wrapper-table .styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+body .wrapper-all .data-kendaraan .wrapper-daftar .wrapper-table .styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+body .wrapper-all .data-kendaraan .wrapper-daftar .wrapper-pagination {
+  padding-bottom: 50px;
+  position: relative;
+}
+body .wrapper-all .data-kendaraan .wrapper-daftar .wrapper-pagination p {
+  position: absolute;
+  left: 0;
+  color: #2c445a;
+}
+body .wrapper-all .data-kendaraan .wrapper-daftar .wrapper-pagination .pagination {
+  position: absolute;
+  right: 0;
+  font-size: 1.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body .wrapper-all .data-kendaraan .wrapper-daftar .wrapper-pagination .pagination i {
+  color: #97bfd6;
+}
+body .wrapper-all .data-kendaraan .wrapper-daftar .wrapper-pagination .pagination i:hover {
+  color: #2c445a;
+  cursor: pointer;
+}
+body .wrapper-all .data-kendaraan .wrapper-daftar .wrapper-pagination .pagination h6 {
+  font-size: 1rem;
+  margin: 0 6px;
+  color: #2c445a;
+  text-shadow: 0 0 1px black;
+}
+
+@media only screen and (max-width: 576px) {
+  body {
+    font-family: "MyWebFont";
+  }
+  body h1 {
+    margin: 15vh 0 0 20px;
+    font-weight: bold;
+    color: #ededed;
+  }
+  body hr {
+    color: white;
+  }
+  body .wrapper-all {
+    margin-top: 0px;
+  }
+}
