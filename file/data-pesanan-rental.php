@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="../css/data-pesanan-rental.min.css">
 
-<h1>Data Pesanan</h1>
+<h1>Data Pesanan Rental Mobil</h1>
 <div class="container">
     <hr>
 </div>

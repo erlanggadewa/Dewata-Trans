@@ -18,48 +18,48 @@
                     </div>
                     <navbar class="navbar">
                         <div class="grup-nav dashboard">
-                            <i class="fas fa-house-user">
-                                &nbsp;Dashboard
+                            <i class="fas fa-house-user" data-ref="dashboard.php">
+                                <span data-ref="dashboard.php">&nbsp;Dashboard</span>
                             </i>
                         </div>
                         <div class="grup-nav master-mobil">
                             <h6>Master Mobil</h6>
                             <hr>
-                            <i class="fas fa-car">
-                                <span>&nbsp;Data Kendaraan</span>
+                            <i class="fas fa-car" data-ref="data-kendaraan.php">
+                                <span data-ref="data-kendaraan.php">&nbsp;Data Kendaraan</span>
                             </i>
                         </div>
                         <div class="grup-nav status">
                             <h6>Status</h6>
                             <hr>
-                            <i class="fas fa-envelope-open-text">
-                                <span>&nbsp;Pending</span>
+                            <i class="fas fa-envelope-open-text" data-ref="pending.php">
+                                <span data-ref="pending.php">&nbsp;Pending</span>
                             </i>
-                            <i class="fas fa-route">
-                                <span>&nbsp;On Going</span>
+                            <i class="fas fa-route" data-ref="ongoing.php">
+                                <span data-ref="ongoing.php">&nbsp;On Going</span>
                             </i>
                         </div>
                         <div class="grup-nav rental-mobil">
                             <h6>Rental Mobil</h6>
                             <hr>
-                            <i class="fas fa-folder-open">
-                                <span>&nbsp;Input Pemesan</span>
+                            <i class="fas fa-folder-open" data-ref="input-rental-mobil.php">
+                                <span data-ref="input-rental-mobil.php">&nbsp;Input Pemesan</span>
                             </i>
-                            <i class="fas fa-database">
-                                <span>&nbsp;&nbsp;Data Pesanan</span>
+                            <i class="fas fa-database" data-ref="data-pesanan-rental.php">
+                                <span data-ref="data-pesanan-rental.php">&nbsp;&nbsp;Data Pesanan</span>
                             </i>
                         </div>
                         <div class="grup-nav paket-pariwisata">
                             <h6>Paket Pariwisata</h6>
                             <hr>
-                            <i class="fas fa-calendar-check">
-                                <span>&nbsp;&nbsp;List Wisata</span>
+                            <i class="fas fa-calendar-check" data-ref="list-paket-wisata.php">
+                                <span data-ref="list-paket-wisata.php">&nbsp;&nbsp;List Wisata</span>
                             </i>
-                            <i class="fas fa-folder-open">
-                                <span>&nbsp;Input Pemesan</span>
+                            <i class="fas fa-folder-open" data-ref="input-paket-wisata.php">
+                                <span data-ref="input-paket-wisata.php">&nbsp;Input Pemesan</span>
                             </i>
-                            <i class="fas fa-database">
-                                <span>&nbsp;&nbsp;Data Pesanan</span>
+                            <i class="fas fa-database" data-ref="data-pesanan-wisata.php">
+                                <span data-ref="data-pesanan-wisata.php">&nbsp;&nbsp;Data Pesanan</span>
                             </i>
                         </div>
                         <div class="grup-nav">
@@ -70,20 +70,10 @@
                         </div>
                     </navbar>
                 </div>
-                <!-- <div class="blur-background col-6 d-md-none"></div> -->
             </div>
             <div class="workspace col-12 col-sm-9 col-md-10">
-                <!-- NANTI INClUDE KERJAAN KALIAN DISINI YA, YANG LAIN DI COMMENT BUAT NGETES -->
                 <?php
-                // include "dashboard.php"
-                // include "data-kendaraan.php"
-                // include "pending.php"
-                // include "ongoing.php"
-                // include "input-rental-mobil.php"
-                // include "data-pesanan-rental.php"
-                // include "list-paket-wisata.php"
-                // include "input-paket-wisata.php"
-                // include "data-pesanan-wisata.php"
+                include "dashboard.php"
                 // include "detail-pesanan-rental"
 
                 ?>
