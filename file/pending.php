@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../css/pending.min.css">
+<link rel="stylesheet" href="../css/pending.css">
 
 <h1>Data Kendaraan Pending</h1>
 <hr>
@@ -25,7 +25,7 @@
                     <td><i class="fas fa-eye"></i></td>
                 </tr>
                 <tr class="active-row">
-                    <td>1</td>
+                    <td>2</td>
                     <td>Kijang Inova</td>
                     <td>Todi Mahendra</td>
                     <td>12-12-2000</i></td>

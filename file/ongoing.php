@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../css/ongoing.min.css">
+<link rel="stylesheet" href="../css/ongoing.css">
 
 <h1>Data Kendaraan On Going</h1>
 <hr>

@@ -130,3 +130,17 @@ body .wrapper-all .data-kendaraan .wrapper-daftar .wrapper-pagination .paginatio
   color: #2c445a;
   text-shadow: 0 0 1px black;
 }
+
+@media only screen and (max-width: 576px) {
+  body {
+    font-family: "MyWebFont";
+  }
+  body h1 {
+    margin: 15vh 0 0 20px;
+    font-weight: bold;
+    color: #ededed;
+  }
+  body hr {
+    color: white;
+  }
+}

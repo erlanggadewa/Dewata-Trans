@@ -1,7 +1,9 @@
 <link rel="stylesheet" href="../css/dashboard.min.css">
 
 <h1>Dashboard Aplikasi</h1>
-<hr>
+<div class="container">
+    <hr>
+</div>
 <div class="row wrapper-data">
     <div class="data1 mobil col-12 col-md-6 col-xl-4">
         <div class="data-mobil">

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../css/list-paket-wisata.min.css">
+<link rel="stylesheet" href="../css/list-paket-wisata.css">
 
 <h1>List Paket Wisata</h1>
 <div class="container">

@@ -61,6 +61,7 @@ body div .wrapper-table .styled-table tbody tr.active-row {
   body h1 {
     font-weight: bold;
     color: #ededed;
+    margin: 15vh 0 0 20px;
   }
   body hr {
     color: white;
