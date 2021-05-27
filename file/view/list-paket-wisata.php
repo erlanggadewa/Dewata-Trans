@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../css/list-paket-wisata.css">
+<link rel="stylesheet" href="../../css/list-paket-wisata.css">
 
 <h1>List Paket Wisata</h1>
 <div class="container">
@@ -19,17 +19,6 @@
                             <div class="col-12 form-group">
                                 <label for="tempat-wisata">Tempat Wisata</label>
                                 <input type="text" class="form-control" placeholder="Input tujuan" id="tempat-wisata">
-                            </div>
-                            <div class="col-6 form-group">
-                                <label for="pilih-kendaraan">Pilih Kendaraan</label>
-                                <select class="form-control" id="pilih-kendaraan">
-                                    <option>Toyota</option>
-                                    <option>Avanza</option>
-                                </select>
-                            </div>
-                            <div class="col-6 form-group">
-                                <label for="harga">Harga</label>
-                                <input type="number" class="form-control" placeholder="exp : 1000000" id="harga">
                             </div>
                             <div class="col-12 form-group">
                                 <label for="tahun-beli">Fasilitas</label>
@@ -58,7 +47,7 @@
                                 <tr>
                                     <th>No.</th>
                                     <th>Nama Paket</th>
-                                    <th>Harga</th>
+                                    <th>Tujuan</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -66,7 +55,7 @@
                                 <tr>
                                     <td>1</td>
                                     <td>Tour de Bali</td>
-                                    <td>Rp. <?= 3000000 ?></td>
+                                    <td>Bali</td>
                                     <td><i class="fas fa-eye"></i></td>
                                 </tr>
 

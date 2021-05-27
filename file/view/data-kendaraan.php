@@ -1,4 +1,13 @@
-<link rel="stylesheet" href="../css/data-kendaraan.min.css">
+<?php
+include "../config/function.php";
+// inputDataKendaraan($_POST);
+var_dump($_POST);
+if (isset($_POST['submit']))
+    header('Location: input-paket-wisata.php');
+// die();
+?>
+
+<link rel="stylesheet" href="../../css/data-kendaraan.min.css">
 
 <h1>Data Kendaraan</h1>
 <hr>
@@ -7,40 +16,40 @@
         <div class="input-kendaraan col-lg-5">
             <div class="wrapper-tambah">
                 <h4 class="container-fluid header">Tambah Data</h4>
-                <form action="" class="">
+                <form action="" class="" method="post">
                     <div class="container g-3">
                         <div class="row">
                             <div class="col-12 form-group">
                                 <label for="name-merk">Nama Merk</label>
-                                <input type="text" class="form-control" placeholder="Enter merk" id="name-merk">
+                                <input type="text" class="form-control" placeholder="Enter merk" id="name-merk" name="nama_merek">
                             </div>
                             <div class="col-12 form-group">
                                 <label for="nama-mobil">Nama Mobil</label>
-                                <input type="text" class="form-control" placeholder="Enter name" id="nama-mobil">
+                                <input type="text" class="form-control" placeholder="Enter name" id="nama-mobil" name="nama_mobil">
                             </div>
                             <div class="col-6 form-group">
                                 <label for="warna-mobil">Warna Mobil</label>
-                                <input type="text" class="form-control" placeholder="Enter color" id="warna-mobil">
+                                <input type="text" class="form-control" placeholder="Enter color" id="warna-mobil" name="warna_mobil">
                             </div>
                             <div class="col-6 form-group">
                                 <label for="jumlah-kursi">Jumlah Kursi</label>
-                                <input type="number" class="form-control" placeholder="Enter number" id="jumlah-kursi">
+                                <input type="number" class="form-control" placeholder="Enter number" id="jumlah-kursi" name="jumlah_kursi">
                             </div>
                             <div class="col-6 form-group">
                                 <label for="nomor-polisi">Nomor Polisi</label>
-                                <input type="text" class="form-control" placeholder="Enter color" id="nomor-polisi">
+                                <input type="text" class="form-control" placeholder="Enter color" id="nomor-polisi" name="nomor_polisi">
                             </div>
                             <div class="col-6 form-group">
                                 <label for="tahun-beli">Tahun Beli</label>
-                                <input type="number" class="form-control" placeholder="Enter number" id="tahun-beli">
+                                <input type="number" class="form-control" placeholder="Enter number" id="tahun-beli" name="tahun_beli">
                             </div>
                             <div class="form-group">
                                 <label for="gambar-mobil">Gambar Mobil</label>
                                 <br>
-                                <input type="file" class="form-control-file" id="gambar-mobil">
+                                <input type="file" class="form-control-file" id="gambar-mobil" name="gambar_mobil">
                             </div>
                             <div class="container wrapper-button">
-                                <button type="submit" class="button button-green">Submit</button>
+                                <button type="submit" class="button button-green" name="submit">Submit</button>
                                 <button type="reset" class="button button-red">Reset</button>
 
                             </div>

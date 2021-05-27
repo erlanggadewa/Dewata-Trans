@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="../css/input-rental-mobil.min.css">
+<link rel="stylesheet" href="../../css/input-paket-wisata.min.css">
 
-<h1>Input Data Pemesan Rental Mobil</h1>
+<h1>Input Data Pemesan Paket Pariwisata</h1>
 <div class="container">
 	<hr>
 </div>
@@ -31,7 +31,7 @@
 							<textarea type="text" class="form-control" placeholder="Enter address" id="alamat-penyewa"></textarea>
 						</div>
 						<div class="col-6 form-group">
-							<label for="tanggal-sewa">Tanggal Sewa</label>
+							<label for="tanggal-sewa">Tanggal Berangkat</label>
 							<input type="date" class="form-control" id="tanggal-sewa">
 						</div>
 						<div class="col-6 form-group">
@@ -43,8 +43,19 @@
 							<input type="text" class="form-control" placeholder="Enter origin" id="kota-asal">
 						</div>
 						<div class="col-6 form-group">
-							<label for="kota-tujuan">Kota Tujuan</label>
-							<input type="text" class="form-control" placeholder="Enter destination" id="kota-tujuan">
+							<label for="pilih-paket">Pilih Paket Wisata</label>
+							<select class="form-control" id="pilih-paket">Pilih Paket Wisata</option>
+								<option>Tour de Bali</option>
+								<option>Study Tour Bandung</option>
+							</select>
+						</div>
+						<div class="col-6 form-group">
+							<label for="nama-supir">Nama Supir</label>
+							<input type="text" class="form-control" placeholder="Enter color" id="nama-supir">
+						</div>
+						<div class="col-6 form-group">
+							<label for="no-hp-supir">No. HP Supir</label>
+							<input type="number" class="form-control" placeholder="Enter color" id="no-hp-supir">
 						</div>
 						<div class="col-6 form-group">
 							<label for="pilih-kendaraan">Pilih Kendaraan</label>

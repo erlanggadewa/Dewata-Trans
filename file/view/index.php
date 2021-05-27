@@ -1,17 +1,20 @@
-<?php include "./_partials/head.php" ?>
+<?php
+include "../_partials/head.php";
 
-<link rel="stylesheet" href="../css/index.min.css">
+?>
+
+<link rel="stylesheet" href="../../css/index.min.css">
 
 <body>
     <header class="d-sm-none">
         <i class="fas fa-align-left show-sidebar"></i>
-        <img src="../img/DewataTransMalang.png" alt="">
+        <img src="../../img/DewataTransMalang.png" alt="">
     </header>
     <div class="container-fluid wrapper-all">
         <div class="row">
             <div class="wrapper-sidebar  col-12 col-sm-3 col-md-2 container-fluid g-0 d-none d-sm-block">
                 <div class="sidebar col-8 col-sm-3 col-md-2 g-0 ">
-                    <img src="../img/Group80.png" alt="" class="d-none d-sm-block g-0">
+                    <img src="../../img/Group80.png" alt="" class="d-none d-sm-block g-0">
                     <div class="toggle">
                         <i class="fas fa-angle-left d-sm-none close-sidebar"></i>
                         <span class="d-sm-none">Menu</span>
@@ -64,7 +67,7 @@
                         </div>
                         <div class="grup-nav">
                             <h6>Informasi Akun</h6>
-                            <i class="fas fa-user-circle">
+                            <i class="fas fa-user-circle admin-icon">
                                 <span>&nbsp;&nbsp;<?= 'administrator' ?></span>
                             </i>
                         </div>
@@ -73,14 +76,14 @@
             </div>
             <div class="workspace col-12 col-sm-9 col-md-10">
                 <?php
-                include "dashboard.php"
+                // include "dashboard.php"
                 // include "detail-pesanan-rental"
-
+                include "../config/config.php";
                 ?>
             </div>
         </div>
     </div>
-    <script src="../js/index.js"></script>
+    <script src="../../js/index.js"></script>
 </body>
 
 </html>

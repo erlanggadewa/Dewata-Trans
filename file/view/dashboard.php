@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../css/dashboard.min.css">
+<link rel="stylesheet" href="../../css/dashboard.min.css">
 
 <h1>Dashboard Aplikasi</h1>
 <div class="container">

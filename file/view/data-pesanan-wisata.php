@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../css/data-pesanan-wisata.min.css">
+<link rel="stylesheet" href="../../css/data-pesanan-wisata.min.css">
 
 <div id="data-pesanan-wisata">
     <h1>Data Pesanan</h1>
