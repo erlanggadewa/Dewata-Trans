@@ -1,25 +1,6 @@
 <?php
 include "../_partials/head.php";
 
-$data1 = fetchData("SELECT nama_mobil,
-nama_penyewa,
-tanggal_sewa,
-tanggal_kembali
-FROM customer
-RIGHT JOIN rental ON customer.id_customer = rental.id_customer WHERE tanggal_sewa <= NOW() AND tanggal_kembali >= NOW();");
-
-$data2 = fetchData("SELECT nama_mobil,
-nama_penyewa,
-tanggal_sewa,
-tanggal_kembali
-FROM customer
-RIGHT JOIN order_wisata ON customer.id_customer = order_wisata.id_customer WHERE tanggal_sewa <= NOW() AND tanggal_kembali >= NOW();");
-
-$data = array_merge($data1, $data2);
-
-usort($data, function ($a, $b) {
-	return $b['tanggal_sewa'] <=> $a['tanggal_sewa'];
-});
 
 ?>
 
@@ -29,7 +10,7 @@ usort($data, function ($a, $b) {
 <hr>
 <div class="container-fluid">
 	<div class="row wrapper-table" style="overflow-x:auto;">
-		<?php if ($data) : ?>
+		<?php if ($data_mulai_ongoing) : ?>
 			<table class="styled-table col-12">
 				<thead>
 					<tr>
@@ -43,7 +24,7 @@ usort($data, function ($a, $b) {
 				</thead>
 				<tbody>
 					<?php $nomor = 1; ?>
-					<?php foreach ($data as $row) : ?>
+					<?php foreach ($data_mulai_ongoing as $row) : ?>
 						<tr>
 							<td><?= $nomor++ ?></td>
 							<td><?= $row['nama_mobil'] ?></td>
