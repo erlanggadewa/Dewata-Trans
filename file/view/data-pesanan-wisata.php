@@ -1,3 +1,7 @@
+<?php
+include "../_partials/head.php";
+?>
+
 <link rel="stylesheet" href="../../css/data-pesanan-wisata.min.css">
 
 <div id="data-pesanan-wisata">
@@ -59,3 +63,4 @@
         </div>
     </div>
 </div>
+<?php include "../_partials/foot.php"; ?>

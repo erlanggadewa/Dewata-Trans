@@ -8,16 +8,11 @@ closeSidebar.addEventListener("click", function () {
   sidebar.classList.remove("d-block");
 });
 
-const navbar = document.querySelector("navbar.navbar");
-
-navbar.addEventListener("click", (e) => {
-  const workspace = document.querySelector(".workspace");
-  let xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      workspace.innerHTML = xhttp.responseText;
-    }
-  };
-  xhttp.open("GET", `${e.target.dataset.ref}`, true);
-  xhttp.send();
+const groupSupir = document.querySelectorAll(".group-supir");
+const toggleSupir = document.querySelector(".toggle-supir");
+toggleSupir.addEventListener("click", function () {
+  groupSupir[0].classList.toggle("d-none");
+  groupSupir[1].classList.toggle("d-none");
 });
+console.log(groupSupir);
+console.log(toggleSupir);

@@ -1,10 +1,17 @@
 <?php
-include "../config/function.php";
-// inputDataKendaraan($_POST);
-var_dump($_POST);
-if (isset($_POST['submit']))
-    header('Location: input-paket-wisata.php');
-// die();
+include "../_partials/head.php";
+
+if (isset($_POST['submit'])) {
+    if (inputDataKendaraan($_POST))
+        echo "<script>
+            alert('Data Berhasil Ditambahkan');
+            location.href = 'data-kendaraan.php';
+        </script>";
+}
+$data = fetchData("SELECT nama_mobil, merek_mobil, status FROM data_kendaraan");
+
+
+
 ?>
 
 <link rel="stylesheet" href="../../css/data-kendaraan.min.css">
@@ -16,7 +23,7 @@ if (isset($_POST['submit']))
         <div class="input-kendaraan col-lg-5">
             <div class="wrapper-tambah">
                 <h4 class="container-fluid header">Tambah Data</h4>
-                <form action="" class="" method="post">
+                <form action="" class="" method="post" id="form-data">
                     <div class="container g-3">
                         <div class="row">
                             <div class="col-12 form-group">
@@ -49,7 +56,7 @@ if (isset($_POST['submit']))
                                 <input type="file" class="form-control-file" id="gambar-mobil" name="gambar_mobil">
                             </div>
                             <div class="container wrapper-button">
-                                <button type="submit" class="button button-green" name="submit">Submit</button>
+                                <button type="submit" class="button button-green" name="submit" form="form-data">Submit</button>
                                 <button type="reset" class="button button-red">Reset</button>
 
                             </div>
@@ -66,40 +73,38 @@ if (isset($_POST['submit']))
                         <input type="text" class="form-control" id="search" placeholder="Masukan keyword ...">
                     </div>
                     <div class="row wrapper-table" style="overflow-x:auto;">
-                        <table class="styled-table col-12">
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Mobil</th>
-                                    <th>Merk</th>
-                                    <th>Status</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Kijang Inova</td>
-                                    <td>Toyota</td>
-                                    <td><i class="fas fa-times"></i></td>
-                                    <td><i class="fas fa-eye"></i></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Kijang Inova</td>
-                                    <td>Toyota</td>
-                                    <td><i class="fas fa-check"></i></td>
-                                    <td><i class="fas fa-eye"></i></td>
-                                </tr>
-                                <tr class="active-row">
-                                    <td>1</td>
-                                    <td>Kijang Inova</td>
-                                    <td>Toyota</td>
-                                    <td><i class="fas fa-check"></i></td>
-                                    <td><i class="fas fa-eye"></i></td>
-                                </tr>
-                            </tbody>
-                        </table>
+
+                        <?php if ($data) : ?>
+                            <table class="styled-table col-12">
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Mobil</th>
+                                        <th>Merk</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $nomor = 1; ?>
+                                    <?php foreach ($data as $row) : ?>
+                                        <tr>
+                                            <td><?= $nomor++ ?></td>
+                                            <td><?= $row['nama_mobil'] ?></td>
+                                            <td><?= $row['merek_mobil'] ?></td>
+                                            <?php if ($row['status'] == 1) : ?>
+                                                <td><?= '<i class="fas fa-check"></i>' ?></td>
+                                            <?php else : ?>
+                                                <td><?= '<i class="fas fa-times"></i>' ?></td>
+                                            <?php endif; ?>
+                                            <td><i class="fas fa-eye"></i></td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        <?php else : ?>
+                            <h3 style="text-align: center; margin: 50px 0">Data Kosong</h3>
+                        <?php endif; ?>
                     </div>
                     <div class="wrapper-pagination">
                         <p>showing <?= 1 ?> to <?= 7 ?> of <?= 10 ?> entries</p>
@@ -114,3 +119,5 @@ if (isset($_POST['submit']))
         </div>
     </div>
 </div>
+
+<?php include "../_partials/foot.php"; ?>
