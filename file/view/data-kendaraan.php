@@ -2,6 +2,8 @@
 include "../_partials/head.php";
 
 if (isset($_POST['submit'])) {
+	var_dump($_FILES);
+	// die();
 	if (inputDataKendaraan($_POST))
 		echo "<script>
             alert('Data Berhasil Ditambahkan');
@@ -9,7 +11,6 @@ if (isset($_POST['submit'])) {
         </script>";
 }
 $data = fetchData("SELECT nomor_polisi, nama_mobil, merek_mobil, status FROM data_kendaraan");
-var_dump($data);
 
 
 
@@ -24,7 +25,7 @@ var_dump($data);
 		<div class="input-kendaraan col-lg-5">
 			<div class="wrapper-tambah">
 				<h4 class="container-fluid header">Tambah Data</h4>
-				<form action="" class="" method="post" id="form-data">
+				<form action="" class="" method="post" id="form-data" enctype="multipart/form-data">
 					<div class="container g-3">
 						<div class="row">
 							<div class="col-12 form-group">

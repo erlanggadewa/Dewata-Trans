@@ -30,7 +30,7 @@ function inputDataKendaraan($data)
     $jumlah_kursi = htmlspecialchars($data["jumlah_kursi"]);
     $nomor_polisi = htmlspecialchars($data["nomor_polisi"]);
     $tahun_beli = htmlspecialchars($data["tahun_beli"]);
-    $gambar_mobil = htmlspecialchars($data["gambar_mobil"]);
+    $gambar_mobil = uploadGambar();
 
     $query = "INSERT INTO $tb_data_kendaraan VALUES('$nomor_polisi','$nama_merek','$nama_mobil','$warna_mobil','$jumlah_kursi','$tahun_beli',1,'$gambar_mobil')";
     mysqli_query($conn, $query);
@@ -190,10 +190,10 @@ function findBook($keyword)
 function uploadGambar()
 {
     // ! $_FILES = array assosiatif 2 dimensi
-    $namaGambar = $_FILES["Profil_Gambar"]["name"];
-    $errorGambar = $_FILES["Profil_Gambar"]["error"];
-    $sizeGambar = $_FILES["Profil_Gambar"]["size"];
-    $tmpName = $_FILES["Profil_Gambar"]["tmp_name"];
+    $namaGambar = $_FILES["gambar_mobil"]["name"];
+    $errorGambar = $_FILES["gambar_mobil"]["error"];
+    $sizeGambar = $_FILES["gambar_mobil"]["size"];
+    $tmpName = $_FILES["gambar_mobil"]["tmp_name"];
     $ektensiValid = ["jpg", "jpeg", "png"];
 
     // * Mengambil ektensi gambar
@@ -219,7 +219,7 @@ function uploadGambar()
         $namaGambarAcak = uniqid(uniqid());
         // ! memnindahkan gambar ke folder yang posisinya relatif terhadap file ini
         $namaGambarFinal = $namaGambarAcak . "." . $ektensiGambar;
-        move_uploaded_file($tmpName, "img/" . $namaGambarFinal);
-        return ("img/" . $namaGambarFinal);
+        move_uploaded_file($tmpName, "../../img/gambar_mobil/" . $namaGambarFinal);
+        return ("../../img/gambar_mobil/" . $namaGambarFinal);
     }
 }

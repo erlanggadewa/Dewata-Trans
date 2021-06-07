@@ -3,7 +3,6 @@ include "../_partials/head.php";
 
 $detail_Id = $_GET['detail_Id'];
 $data = fetchData("SELECT * FROM data_kendaraan WHERE nomor_polisi = '$detail_Id'");
-var_dump($data);
 ?>
 
 <link rel="stylesheet" href="../../css/detail-data-kendaraan.css">
@@ -18,7 +17,7 @@ var_dump($data);
 			<h4 class="container-fluid header">Detail Kendaraan</h4>
 			<div class="row">
 				<div class="col-12 col-md-6">
-					<img src="../../img/mobil_cover.png" alt="" width="100%">
+					<img src="<?= $data[0]['gambar_mobil'] ?>" alt="" width="100%">
 				</div>
 				<div class="col-12 col-md-6 wrapper-data">
 					<pre><span>
