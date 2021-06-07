@@ -18,7 +18,7 @@ function fetchData($query)
     return $rows;
 }
 
-// INPUT DATA KENDARAAN
+// * INPUT DATA KENDARAAN
 function inputDataKendaraan($data)
 {
     global $conn;
@@ -183,4 +183,43 @@ function findBook($keyword)
 		penerbit LIKE '%$keyword%'";
 
     return fetchData($jenisQuery);
+}
+
+// * UPLOAD GAMBAR 
+
+function uploadGambar()
+{
+    // ! $_FILES = array assosiatif 2 dimensi
+    $namaGambar = $_FILES["Profil_Gambar"]["name"];
+    $errorGambar = $_FILES["Profil_Gambar"]["error"];
+    $sizeGambar = $_FILES["Profil_Gambar"]["size"];
+    $tmpName = $_FILES["Profil_Gambar"]["tmp_name"];
+    $ektensiValid = ["jpg", "jpeg", "png"];
+
+    // * Mengambil ektensi gambar
+    $ektensiGambar = explode(".", $namaGambar);
+    $ektensiGambar = strtolower(end($ektensiGambar));
+
+    if ($errorGambar === 4) {
+        echo "<script>
+				alert('Pilih Gambar Terlebih Dahulu');		
+				</script>";
+        return false;
+    } else if ($sizeGambar > 5000000) {
+        echo "<script>
+				alert('Size Gambar Melebihi 5 mega byte');		
+				</script>";
+        return false;
+    } else if ((!in_array($ektensiGambar, $ektensiValid))) {
+        echo "<script>
+				alert('Harap masukan gambar dengan type (jpg, jpeg, png)');		
+				</script>";
+        return false;
+    } else { // ! STEP INI BERARTI SUKSES DAN SIAP UNTUK DI UPLOAD
+        $namaGambarAcak = uniqid(uniqid());
+        // ! memnindahkan gambar ke folder yang posisinya relatif terhadap file ini
+        $namaGambarFinal = $namaGambarAcak . "." . $ektensiGambar;
+        move_uploaded_file($tmpName, "img/" . $namaGambarFinal);
+        return ("img/" . $namaGambarFinal);
+    }
 }

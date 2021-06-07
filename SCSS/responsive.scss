@@ -1,3 +1,7 @@
+$warna1: #2c445a;
+$warna2: #ededed;
+$warna3: #97bfd6;
+
 *,
 *::before,
 *::after {
@@ -538,6 +542,15 @@ progress {
 .g-5,
 .gy-5 {
   --bs-gutter-y: 3rem;
+}
+.g-6,
+.gx-6 {
+  --bs-gutter-x: calc(3rem + 2vw);
+}
+
+.g-6,
+.gy-6 {
+  --bs-gutter-y: calc(3rem + 2vw);
 }
 @media (min-width: 576px) {
   .container-sm,
@@ -1994,15 +2007,15 @@ progress {
   color: crimson;
 }
 
-.button-dark {
-  background-color: white;
-  color: black;
-  border: 2px solid #f44336;
+.button-primary {
+  background-color: $warna1;
+  color: white;
+  border: 2px solid $warna1;
 }
 
-.button-dark:hover {
+.button-primary:hover {
   background-color: transparent;
-  color: white;
+  color: $warna1;
 }
 
 .button-grey {
