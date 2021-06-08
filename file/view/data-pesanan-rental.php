@@ -1,7 +1,9 @@
 <?php
 include "../_partials/head.php";
 
-$data = fetchData("SELECT customer.nama_penyewa, rental.kota_tujuan, rental.tanggal_sewa, rental.tanggal_kembali FROM customer INNER JOIN rental ON customer.id_customer = rental.id_customer");
+$data = fetchData("SELECT rental.id_customer, customer.nama_penyewa, rental.kota_tujuan, rental.tanggal_sewa, rental.tanggal_kembali FROM customer INNER JOIN rental ON customer.id_customer = rental.id_customer");
+
+var_dump($data);
 
 ?>
 
@@ -41,7 +43,13 @@ $data = fetchData("SELECT customer.nama_penyewa, rental.kota_tujuan, rental.tang
 										<td><?= $row['kota_tujuan'] ?></td>
 										<td><?= $row['tanggal_sewa'] ?></td>
 										<td><?= $row['tanggal_kembali'] ?></td>
-										<td><i class="fas fa-eye"></i></td>
+										<td>
+											<form action="detail-data-pesanan-rental.php" method="get">
+												<?php $id_detail = $row['id_customer'] ?>
+												<button name="detail_Id" value="<?= $id_detail ?>" style="border:none; background-color : transparent;"><i class=" fas fa-eye"></i>
+												</button>
+											</form>
+										</td>
 									</tr>
 								<?php endforeach; ?>
 							</tbody>

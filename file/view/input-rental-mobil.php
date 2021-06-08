@@ -22,7 +22,7 @@ if (isset($_POST['submit']))
 	<div class="row">
 		<div class="wrapper-tambah g-0">
 			<h4 class="container-fluid header">Tambah Data</h4>
-			<form action="" class="" method="post" id="form-data">
+			<form action="" class="" method="post" id="form-data" enctype="multipart/form-data">
 				<div class="container g-3">
 					<div class="row">
 						<div class="col-12 form-group">
@@ -91,7 +91,7 @@ if (isset($_POST['submit']))
 						<div class="form-group">
 							<label for="gambar-mobil">Gambar Penyewa</label>
 							<br>
-							<input type="file" accept="image/*" class="form-control-file" id="gambar-penyewa" name="gambar_penyewa">
+							<input type="file" accept="image/*" class="form-control-file" id="gambar-penyewa" name="gambar">
 						</div>
 						<div class="container wrapper-button">
 							<button type="submit" class="button button-green" form="form-data" name="submit">Submit</button>

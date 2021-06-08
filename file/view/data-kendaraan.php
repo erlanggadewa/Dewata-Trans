@@ -53,7 +53,7 @@ $data = fetchData("SELECT nomor_polisi, nama_mobil, merek_mobil, status FROM dat
 							<div class="form-group">
 								<label for="gambar-mobil">Gambar Mobil</label>
 								<br>
-								<input type="file" class="form-control-file" id="gambar-mobil" name="gambar_mobil" accept="image/*">
+								<input type="file" class="form-control-file" id="gambar-mobil" name="gambar" accept="image/*">
 							</div>
 							<div class="container wrapper-button">
 								<button type="submit" class="button button-green" name="submit" form="form-data">Submit</button>

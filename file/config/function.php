@@ -31,32 +31,6 @@ function inputDataKendaraan($data)
     $nomor_polisi = htmlspecialchars($data["nomor_polisi"]);
     $tahun_beli = htmlspecialchars($data["tahun_beli"]);
 
-
-    if (isset($data['submit_edit'])) {
-
-        $gambarLama = htmlspecialchars($data["gambar_mobil"]);
-        if ($_FILES["gambar_mobil"]["error"] === 4) {
-            $gambar = htmlspecialchars($gambarLama);
-        } else {
-            $gambar = uploadGambar();
-        }
-
-
-        $query = "UPDATE $tb_data_kendaraan SET
-        nomor_polisi = '$nomor_polisi',
-        merek_mobil = '$nama_merek',
-        nama_mobil = '$nama_mobil',
-        warna_mobil= '$warna_mobil',
-        jumlah_kursi = '$jumlah_kursi',
-        tahun_beli = '$tahun_beli',
-        gambar_mobil = '$gambar' 
-        WHERE nomor_polisi = '$nomor_polisi'";
-
-        mysqli_query($conn, $query);
-
-        return mysqli_affected_rows($conn);
-    }
-
     $gambar_mobil = uploadGambar();
 
     $query = "INSERT INTO $tb_data_kendaraan VALUES('$nomor_polisi','$nama_merek','$nama_mobil','$warna_mobil','$jumlah_kursi','$tahun_beli',1,'$gambar_mobil')";
@@ -124,7 +98,7 @@ function inputDataRental($data)
 
     $kendaraan = htmlspecialchars($data["pilih_kendaraan"]);
     $total_harga = htmlspecialchars($data["total_harga"]);
-    $gambar_penyewa = htmlspecialchars($data["gambar_penyewa"]);
+    $gambar_penyewa = uploadGambar();
 
 
     $query = "INSERT INTO $tb_data_customer VALUES(default,'$nama_penyewa','$no_hp','$gender','$alamat_penyewa','$gambar_penyewa')";
@@ -141,6 +115,64 @@ function inputDataRental($data)
 
     return mysqli_affected_rows($conn);
 }
+
+function editDataRental($data)
+{
+    global $conn;
+    $tb_data_customer = 'customer';
+    $tb_data_rental = 'rental';
+
+    $id = htmlspecialchars($data["idTarget"]);
+    $nama_penyewa = htmlspecialchars($data["nama_penyewa"]);
+    $no_hp = htmlspecialchars($data["no_hp"]);
+    $gender = htmlspecialchars($data["gender"]);
+    $alamat_penyewa = htmlspecialchars($data["alamat_penyewa"]);
+    $tanggal_sewa = htmlspecialchars($data["tanggal_sewa"]);
+    $tanggal_kembali = htmlspecialchars($data["tanggal_kembali"]);
+    $kota_asal = htmlspecialchars($data["kota_asal"]);
+    $kota_tujuan = htmlspecialchars($data["kota_tujuan"]);
+
+    $nama_supir = htmlspecialchars($data["nama_supir"]);
+    if (!$nama_supir) $nama_supir = "Tidak memakai supir";
+
+    $no_hp_supir = htmlspecialchars($data["no_hp_supir"]);
+    if (!$no_hp_supir) $no_hp_supir = "-";
+
+    $kendaraan = htmlspecialchars($data["pilih_kendaraan"]);
+    $total_harga = htmlspecialchars($data["total_harga"]);
+    $gambar_penyewa = uploadGambar();
+
+
+    $query = "UPDATE $tb_data_customer SET
+    nama_penyewa = '$nama_penyewa',
+    no_hp = '$no_hp',
+    jenis_kelamin = '$gender',
+    alamat = '$alamat_penyewa',
+    gambar_customer = '$gambar_penyewa' 
+    WHERE id_customer = $id";
+    mysqli_query($conn, $query);
+
+    //  ! get data nomor polisi using regex betwen bracket ()
+    preg_match('#\((.*?)\)#', $kendaraan, $nomor_polisi);
+    $nomor_polisi = $nomor_polisi[1];
+
+    $query = "UPDATE $tb_data_rental SET
+    nomor_polisi = '$nomor_polisi',
+    tanggal_sewa = '$tanggal_sewa',
+    tanggal_kembali = '$tanggal_kembali',
+    kota_asal = '$kota_asal',
+    kota_tujuan = '$kota_tujuan',
+    nama_supir = '$nama_supir',
+    no_hp_supir = '$no_hp_supir',
+    nama_mobil = '$kendaraan',
+    total_harga_rental = '$total_harga'
+    WHERE id_customer = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
 
 // * INPUT DATA WISATA
 function inputDataWisata($data)
@@ -233,10 +265,10 @@ function editListPaket($data)
 function uploadGambar()
 {
     // ! $_FILES = array assosiatif 2 dimensi
-    $namaGambar = $_FILES["gambar_mobil"]["name"];
-    $errorGambar = $_FILES["gambar_mobil"]["error"];
-    $sizeGambar = $_FILES["gambar_mobil"]["size"];
-    $tmpName = $_FILES["gambar_mobil"]["tmp_name"];
+    $namaGambar = $_FILES["gambar"]["name"];
+    $errorGambar = $_FILES["gambar"]["error"];
+    $sizeGambar = $_FILES["gambar"]["size"];
+    $tmpName = $_FILES["gambar"]["tmp_name"];
     $ektensiValid = ["jpg", "jpeg", "png"];
 
     // * Mengambil ektensi gambar
@@ -244,13 +276,11 @@ function uploadGambar()
     $ektensiGambar = strtolower(end($ektensiGambar));
 
     if ($errorGambar === 4) {
-        echo "<script>
-				alert('Pilih Gambar Terlebih Dahulu');		
-				</script>";
+
         return false;
-    } else if ($sizeGambar > 5000000) {
+    } else if ($sizeGambar > 10000000) {
         echo "<script>
-				alert('Size Gambar Melebihi 5 mega byte');		
+				alert('Size Gambar Melebihi 10 mega byte');		
 				</script>";
         return false;
     } else if ((!in_array($ektensiGambar, $ektensiValid))) {

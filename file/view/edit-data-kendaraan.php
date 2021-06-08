@@ -59,7 +59,7 @@ $listKendaraan = fetchData("SELECT * FROM data_kendaraan");
 								<br>
 								<br>
 								<input type="hidden" class="form-control-file" id="gambar-mobil" name="gambar_lama" value="<?= $data[0]['gambar_mobil'] ?>">
-								<input type="file" accept="image/*" class="form-control-file" id="gambar-mobil" name="gambar_mobil" value="<?= $data[0]['gambar_mobil'] ?>">
+								<input type="file" accept="image/*" class="form-control-file" id="gambar-mobil" name="gambar" value="<?= $data[0]['gambar_mobil'] ?>">
 							</div>
 							<div class="container wrapper-button">
 								<button type="submit" class="button button-green" name="submit_edit" form="form-data">Edit</button>
