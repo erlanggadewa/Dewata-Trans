@@ -178,4 +178,7 @@ body .container-fluid .row .wrapper-sidebar .blur-background {
   body .wrapper-all .row .wrapper-sidebar .sidebar .navbar .grup-nav .fas span {
     font-size: calc(1.5vw + 1rem);
   }
+  body .wrapper-all .row .wrapper-sidebar .sidebar .navbar .grup-nav .admin-icon {
+    color: #1d7cca;
+  }
 }

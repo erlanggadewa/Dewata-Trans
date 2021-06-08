@@ -7,10 +7,6 @@ body h1 {
   font-weight: bold;
   color: #2c445a;
 }
-body hr {
-  margin-left: 20px;
-  width: 87%;
-}
 body .wrapper-data .data1 {
   display: -webkit-box;
   display: -ms-flexbox;

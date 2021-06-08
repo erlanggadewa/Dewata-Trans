@@ -39,6 +39,9 @@ body .wrapper-tambah form .container .row .form-group label {
   font-size: 0.8rem;
   font-weight: bold;
 }
+body .wrapper-tambah form .container .row .form-switch {
+  margin: 20px 0;
+}
 body .wrapper-tambah form .container .row .wrapper-button {
   text-align: right;
   margin-bottom: 20px;
