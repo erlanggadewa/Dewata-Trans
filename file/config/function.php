@@ -30,9 +30,71 @@ function inputDataKendaraan($data)
     $jumlah_kursi = htmlspecialchars($data["jumlah_kursi"]);
     $nomor_polisi = htmlspecialchars($data["nomor_polisi"]);
     $tahun_beli = htmlspecialchars($data["tahun_beli"]);
+
+
+    if (isset($data['submit_edit'])) {
+
+        $gambarLama = htmlspecialchars($data["gambar_mobil"]);
+        if ($_FILES["gambar_mobil"]["error"] === 4) {
+            $gambar = htmlspecialchars($gambarLama);
+        } else {
+            $gambar = uploadGambar();
+        }
+
+
+        $query = "UPDATE $tb_data_kendaraan SET
+        nomor_polisi = '$nomor_polisi',
+        merek_mobil = '$nama_merek',
+        nama_mobil = '$nama_mobil',
+        warna_mobil= '$warna_mobil',
+        jumlah_kursi = '$jumlah_kursi',
+        tahun_beli = '$tahun_beli',
+        gambar_mobil = '$gambar' 
+        WHERE nomor_polisi = '$nomor_polisi'";
+
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+    }
+
     $gambar_mobil = uploadGambar();
 
     $query = "INSERT INTO $tb_data_kendaraan VALUES('$nomor_polisi','$nama_merek','$nama_mobil','$warna_mobil','$jumlah_kursi','$tahun_beli',1,'$gambar_mobil')";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+// * EDIT DATA KENDARAAN 
+function editDataKendaraan($data)
+{
+    global $conn;
+    $tb_data_kendaraan = 'data_kendaraan';
+
+    $nama_merek = htmlspecialchars($data["nama_merek"]);
+    $nama_mobil = htmlspecialchars($data["nama_mobil"]);
+    $warna_mobil = htmlspecialchars($data["warna_mobil"]);
+    $jumlah_kursi = htmlspecialchars($data["jumlah_kursi"]);
+    $nomor_polisi = htmlspecialchars($data["nomor_polisi"]);
+    $tahun_beli = htmlspecialchars($data["tahun_beli"]);
+
+    $gambarLama = htmlspecialchars($data["gambar_lama"]);
+    if ($_FILES["gambar_mobil"]["error"] === 4) {
+        $gambar = htmlspecialchars($gambarLama);
+    } else {
+        $gambar = uploadGambar();
+    }
+
+    $query = "UPDATE $tb_data_kendaraan SET
+        merek_mobil = '$nama_merek',
+        nama_mobil = '$nama_mobil',
+        warna_mobil= '$warna_mobil',
+        jumlah_kursi = '$jumlah_kursi',
+        tahun_beli = '$tahun_beli',
+        gambar_mobil = '$gambar' 
+        WHERE nomor_polisi = '$nomor_polisi'";
+
     mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
@@ -114,9 +176,7 @@ function inputDataWisata($data)
 
     //  ! get data nomor polisi using regex betwen bracket ()
     preg_match('#\((.*?)\)#', $kendaraan, $nomor_polisi);
-    var_dump($nomor_polisi);
     $nomor_polisi = $nomor_polisi[1];
-    var_dump($nomor_polisi);
 
 
     $id_paket = fetchData("SELECT id_paket FROM paket_wisata WHERE nama_paket='$nama_paket'");
@@ -145,45 +205,28 @@ function inputListPaket($data)
     return mysqli_affected_rows($conn);
 }
 
-//  DELETE DATA
-function deleteData($data)
+function editListPaket($data)
 {
-    global $conn, $nim_tbbuku;
-    $query = "DELETE FROM $nim_tbbuku WHERE id_buku = $data";
+    global $conn;
+    $tb_data_paket = 'paket_wisata';
+
+    $nama_paket = htmlspecialchars($data["nama-paket"]);
+    $tujuan = htmlspecialchars($data["tempat-wisata"]);
+    $fasilitas = htmlspecialchars($data["fasilitas"]);
+    $idTarget = $data['idTarget'];
+
+
+    $query = "UPDATE $tb_data_paket SET
+    nama_paket = '$nama_paket',
+    tujuan = '$tujuan',
+    fasilitas = '$fasilitas'
+    WHERE id_paket = $idTarget";
+
     mysqli_query($conn, $query);
-}
-
-// EDIT DATA
-function editBook($data)
-{
-    $id_buku = htmlspecialchars($data["id_buku"]);
-    $judul_buku = htmlspecialchars($data["judul_buku"]);
-    $penerbit = htmlspecialchars($data["penerbit"]);
-    $pengarang = htmlspecialchars($data["pengarang"]);
-
-    global $conn, $nim_tbbuku;
-
-    $sql = "UPDATE $nim_tbbuku SET
-		judul_buku = '$judul_buku',
-		penerbit = '$penerbit',
-		pengarang = '$pengarang'
-		WHERE id_buku = $id_buku";
-    mysqli_query($conn, $sql);
     return mysqli_affected_rows($conn);
 }
 
-// CARI BUKU
-function findBook($keyword)
-{
-    global $nim_tbbuku;
-    $jenisQuery = "SELECT * FROM $nim_tbbuku WHERE 
-		id_buku LIKE '%$keyword%' OR
-		judul_buku LIKE '%$keyword%' OR
-		pengarang LIKE '%$keyword%' OR
-		penerbit LIKE '%$keyword%'";
 
-    return fetchData($jenisQuery);
-}
 
 // * UPLOAD GAMBAR 
 
@@ -219,7 +262,7 @@ function uploadGambar()
         $namaGambarAcak = uniqid(uniqid());
         // ! memnindahkan gambar ke folder yang posisinya relatif terhadap file ini
         $namaGambarFinal = $namaGambarAcak . "." . $ektensiGambar;
-        move_uploaded_file($tmpName, "../../img/gambar_mobil/" . $namaGambarFinal);
-        return ("../../img/gambar_mobil/" . $namaGambarFinal);
+        move_uploaded_file($tmpName, "../../img/gambar_data/" . $namaGambarFinal);
+        return ("../../img/gambar_data/" . $namaGambarFinal);
     }
 }

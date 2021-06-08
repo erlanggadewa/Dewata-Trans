@@ -16,7 +16,7 @@ $data = fetchData("SELECT * FROM data_kendaraan WHERE nomor_polisi = '$detail_Id
 		<div class="wrapper-header g-0">
 			<h4 class="container-fluid header">Detail Kendaraan</h4>
 			<div class="row">
-				<div class="col-12 col-md-6">
+				<div class="col-12 col-md-6 g-6">
 					<img src="<?= $data[0]['gambar_mobil'] ?>" alt="" width="100%">
 				</div>
 				<div class="col-12 col-md-6 wrapper-data">
@@ -27,7 +27,7 @@ Nomor Polisi 	:	<?= $data[0]['nomor_polisi'] ?>
 Tahun Beli		:	<?= $data[0]['tahun_beli'] ?></span></pre>
 				</div>
 				<div class="wrapper-button g-6">
-					<form action="ubah.php" method="post" style="display: inline-block;">
+					<form action="edit-data-kendaraan.php" method="post" style="display: inline-block;">
 						<input type="text" class="d-none" value="data_kendaraan" name="tb_name">
 						<input type="text" class="d-none" value="data-kendaraan.php" name="src_page">
 						<button type="" class="button button-primary" name="idTarget" value="<?= $data[0]['nomor_polisi'] ?>">Ubah</button>
@@ -37,7 +37,7 @@ Tahun Beli		:	<?= $data[0]['tahun_beli'] ?></span></pre>
 						<input type="text" class="d-none" value="data-kendaraan.php" name="src_page">
 						<button name="idTarget" type="submit" value="<?= $data[0]['nomor_polisi'] ?>" class=" button button-red" onclick="return confirm('YAKIN HAPUS ?');">Hapus</button>
 					</form>
-					<button type="" class=" button button-grey">Kembali</button>
+					<button type="" class=" button button-grey" onclick="location.href='data-kendaraan.php'">Kembali</button>
 				</div>
 			</div>
 		</div>

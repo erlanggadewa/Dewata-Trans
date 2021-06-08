@@ -1,7 +1,6 @@
 <?php
 include "../_partials/head.php";
 
-var_dump($_POST);
 if (isset($_POST['submit']))
 	if (inputListPaket($_POST))
 		echo "<script>  
@@ -9,7 +8,7 @@ if (isset($_POST['submit']))
 		location.href = 'list-paket-wisata.php';
 		</script>";
 
-$data = fetchData("SELECT nama_paket, tujuan FROM paket_wisata");
+$data = fetchData("SELECT id_paket, nama_paket, tujuan FROM paket_wisata");
 ?>
 
 <link rel="stylesheet" href="../../css/list-paket-wisata.css">
@@ -72,7 +71,13 @@ $data = fetchData("SELECT nama_paket, tujuan FROM paket_wisata");
 											<td><?= $nomor++ ?></td>
 											<td><?= $row['nama_paket'] ?></td>
 											<td><?= $row['tujuan'] ?></td>
-											<td><i class="fas fa-eye"></i></td>
+											<td>
+												<form action="detail-list-paket-wisata.php" method="get">
+													<?php $id_paket = $row['id_paket'] ?>
+													<button name="detail_Id" value="<?= $id_paket ?>" style="border:none; background-color : transparent;"><i class=" fas fa-eye"></i>
+													</button>
+												</form>
+											</td>
 										</tr>
 									<?php endforeach; ?>
 								</tbody>

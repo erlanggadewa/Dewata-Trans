@@ -1,62 +1,68 @@
 <?php
 include "../_partials/head.php";
 
-if (isset($_POST['submit'])) {
-	if (inputDataKendaraan($_POST))
+// var_dump($_POST);
+if (isset($_POST['submit_edit'])) {
+	if (editDataKendaraan($_POST))
 		echo "<script>
-            alert('Data Berhasil Ditambahkan');
+            alert('Data Berhasil Edit');
             location.href = 'data-kendaraan.php';
         </script>";
 }
-$data = fetchData("SELECT nomor_polisi, nama_mobil, merek_mobil, status FROM data_kendaraan");
-
-
+$id = $_POST['idTarget'];
+$data = fetchData("SELECT * FROM data_kendaraan WHERE nomor_polisi='$id'");
+var_dump($data);
 
 ?>
 
 <link rel="stylesheet" href="../../css/data-kendaraan.min.css">
 
-<h1>Data Kendaraan</h1>
+<h1>Edit Data Kendaraan</h1>
 <hr>
 <div class="container-fluid wrapper-all">
 	<div class="row" style="margin-top:10px">
 		<div class="input-kendaraan col-lg-5">
 			<div class="wrapper-tambah">
-				<h4 class="container-fluid header">Tambah Data</h4>
+				<h4 class="container-fluid header">Edit Data</h4>
 				<form action="" class="" method="post" id="form-data" enctype="multipart/form-data">
 					<div class="container g-3">
 						<div class="row">
 							<div class="col-12 form-group">
 								<label for="name-merk">Nama Merk</label>
-								<input type="text" class="form-control" placeholder="Enter merk" id="name-merk" name="nama_merek">
+								<input type="text" class="form-control" placeholder="Enter merk" id="name-merk" name="nama_merek" value="<?= $data[0]['merek_mobil'] ?>">
+
 							</div>
 							<div class="col-12 form-group">
 								<label for="nama-mobil">Nama Mobil</label>
-								<input type="text" class="form-control" placeholder="Enter name" id="nama-mobil" name="nama_mobil">
+								<input type="text" class="form-control" placeholder="Enter name" id="nama-mobil" name="nama_mobil" value="<?= $data[0]['nama_mobil'] ?>">
 							</div>
 							<div class="col-6 form-group">
 								<label for="warna-mobil">Warna Mobil</label>
-								<input type="text" class="form-control" placeholder="Enter color" id="warna-mobil" name="warna_mobil">
+								<input type="text" class="form-control" placeholder="Enter color" id="warna-mobil" name="warna_mobil" value="<?= $data[0]['warna_mobil'] ?>">
 							</div>
 							<div class="col-6 form-group">
 								<label for="jumlah-kursi">Jumlah Kursi</label>
-								<input type="number" class="form-control" placeholder="Enter number" id="jumlah-kursi" name="jumlah_kursi">
+								<input type="number" class="form-control" placeholder="Enter number" id="jumlah-kursi" name="jumlah_kursi" value="<?= $data[0]['jumlah_kursi'] ?>">
 							</div>
 							<div class="col-6 form-group">
 								<label for="nomor-polisi">Nomor Polisi</label>
-								<input type="text" class="form-control" placeholder="Enter color" id="nomor-polisi" name="nomor_polisi">
+								<input type="text" class="form-control" placeholder="Enter color" id="nomor-polisi" name="nomor_polisi" value="<?= $data[0]['nomor_polisi'] ?>" readonly>
 							</div>
 							<div class="col-6 form-group">
 								<label for="tahun-beli">Tahun Beli</label>
-								<input type="number" class="form-control" placeholder="Enter number" id="tahun-beli" name="tahun_beli">
+								<input type="number" class="form-control" placeholder="Enter number" id="tahun-beli" name="tahun_beli" value="<?= $data[0]['tahun_beli'] ?>">
 							</div>
 							<div class="form-group">
 								<label for="gambar-mobil">Gambar Mobil</label>
 								<br>
-								<input type="file" class="form-control-file" id="gambar-mobil" name="gambar_mobil" accept="image/*">
+								<img src="<?= $data[0]['gambar_mobil'] ?>" alt="" width="200px">
+								<br>
+								<br>
+								<input type="hidden" class="form-control-file" id="gambar-mobil" name="gambar_lama" value="<?= $data[0]['gambar_mobil'] ?>">
+								<input type="file" accept="image/*" class="form-control-file" id="gambar-mobil" name="gambar_mobil" value="<?= $data[0]['gambar_mobil'] ?>">
 							</div>
 							<div class="container wrapper-button">
-								<button type="submit" class="button button-green" name="submit" form="form-data">Submit</button>
+								<button type="submit" class="button button-green" name="submit_edit" form="form-data">Edit</button>
 								<button type="reset" class="button button-red">Reset</button>
 
 							</div>

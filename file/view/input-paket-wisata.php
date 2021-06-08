@@ -97,7 +97,7 @@ if (isset($_POST['submit']))
 						<div class="form-group">
 							<label for="gambar-mobil">Gambar Penyewa</label>
 							<br>
-							<input type="file" class="form-control-file" id="gambar-penyewa" name="gambar_penyewa">
+							<input type="file" accept="image/*" class="form-control-file" id="gambar-penyewa" name="gambar_penyewa">
 						</div>
 						<div class="container wrapper-button">
 							<button type="submit" class="button button-green" form="form-data" name="submit">Submit</button>
