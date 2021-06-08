@@ -72,7 +72,7 @@ $data = fetchData("SELECT nomor_polisi, nama_mobil, merek_mobil, status FROM dat
 					<div class="col-8 form-group ">
 						<input type="text" class="form-control" id="search" placeholder="Masukan keyword ...">
 					</div>
-					<div class="row wrapper-table" style="overflow-x:auto;">
+					<div class="row wrapper-table" style="overflow-x:auto;" id="wrapper-search">
 
 						<?php if ($data) : ?>
 							<table class="styled-table col-12">
@@ -127,5 +127,5 @@ $data = fetchData("SELECT nomor_polisi, nama_mobil, merek_mobil, status FROM dat
 		</div>
 	</div>
 </div>
-
+<script src="../../js/ajax-data-kendaraan.js"></script>
 <?php include "../_partials/foot.php"; ?>

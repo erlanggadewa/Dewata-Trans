@@ -1,7 +1,6 @@
 <?php
 include "../_partials/head.php";
 
-// var_dump($_POST);
 if (isset($_POST['submit_edit'])) {
 	if (editDataKendaraan($_POST))
 		echo "<script>
@@ -11,7 +10,8 @@ if (isset($_POST['submit_edit'])) {
 }
 $id = $_POST['idTarget'];
 $data = fetchData("SELECT * FROM data_kendaraan WHERE nomor_polisi='$id'");
-var_dump($data);
+
+$listKendaraan = fetchData("SELECT * FROM data_kendaraan");
 
 ?>
 
@@ -78,7 +78,7 @@ var_dump($data);
 					<div class="col-8 form-group ">
 						<input type="text" class="form-control" id="search" placeholder="Masukan keyword ...">
 					</div>
-					<div class="row wrapper-table" style="overflow-x:auto;">
+					<div class="row wrapper-table" style="overflow-x:auto;" id="wrapper-search">
 
 						<?php if ($data) : ?>
 							<table class="styled-table col-12">
@@ -93,7 +93,7 @@ var_dump($data);
 								</thead>
 								<tbody>
 									<?php $nomor = 1; ?>
-									<?php foreach ($data as $row) : ?>
+									<?php foreach ($listKendaraan as $row) : ?>
 										<tr>
 											<td><?= $nomor++ ?></td>
 											<td><?= $row['nama_mobil'] ?></td>
@@ -133,5 +133,5 @@ var_dump($data);
 		</div>
 	</div>
 </div>
-
+<script src="../../js/ajax-data-kendaraan.js"></script>
 <?php include "../_partials/foot.php"; ?>

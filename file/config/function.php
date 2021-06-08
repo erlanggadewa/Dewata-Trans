@@ -5,7 +5,7 @@ $pass = "";
 $dbname = "dewata_trans";
 $conn = mysqli_connect($server, $username, $pass, $dbname);
 
-// AMBIL DATA
+// * AMBIL DATA
 function fetchData($query)
 {
     global $conn;
@@ -189,7 +189,7 @@ function inputDataWisata($data)
 }
 
 
-// INPUT DATA Paket Wisata
+// * INPUT DATA Paket Wisata
 function inputListPaket($data)
 {
     global $conn;
@@ -265,4 +265,14 @@ function uploadGambar()
         move_uploaded_file($tmpName, "../../img/gambar_data/" . $namaGambarFinal);
         return ("../../img/gambar_data/" . $namaGambarFinal);
     }
+}
+
+// * CARI DATA DI DATABASE
+function findDataKendaraan($keyword)
+{
+    $jenisQuery = "SELECT * FROM data_kendaraan WHERE 
+		merek_mobil LIKE '%$keyword%' OR
+		nama_mobil LIKE '%$keyword%'";
+
+    return fetchData($jenisQuery);
 }

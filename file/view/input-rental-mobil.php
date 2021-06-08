@@ -103,5 +103,5 @@ if (isset($_POST['submit']))
 		</div>
 	</div>
 </div>
-
+<script src="../../js/function-supir.js"></script>
 <?php include "../_partials/foot.php"; ?>

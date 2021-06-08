@@ -1,6 +1,7 @@
 <?php
 include "../config/function.php";
-include "../config/updateStatusKendaraan.php";
+include "../config/updatePending.php";
+include "../config/updateOnGoing.php";
 
 ?>
 
