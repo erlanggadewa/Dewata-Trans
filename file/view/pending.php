@@ -39,7 +39,7 @@ usort($data, function ($a, $b) {
             <th>Nama Pemesan</th>
             <th>Tanggal Berangkat</th>
             <th>Tanggal Kembali</th>
-            <th>Aksi</th>
+            <!-- <th>Aksi</th> -->
           </tr>
         </thead>
         <tbody>
@@ -51,7 +51,7 @@ usort($data, function ($a, $b) {
               <td><?= $row['nama_penyewa'] ?></td>
               <td><?= $row['tanggal_sewa'] ?></td>
               <td><?= $row['tanggal_kembali'] ?></td>
-              <td><i class="fas fa-eye"></i></td>
+              <!-- <td><i class="fas fa-eye"></i></td> -->
             </tr>
           <?php endforeach; ?>
         </tbody>

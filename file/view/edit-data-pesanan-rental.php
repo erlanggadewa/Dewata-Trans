@@ -1,18 +1,19 @@
 <?php
 include "../_partials/head.php";
 
-if (isset($_POST['submit']))
-  if (editDataRental($_POST))
-    echo "<script>
-    alert('Data Berhasil Diedit');
-    location.href = 'input-rental-mobil.php';
-    </script>";
+if (isset($_POST['submit'])) {
+
+  editDataRental($_POST);
+  echo "<script>
+  alert('Data Berhasil Diedit');
+  location.href = 'data-pesanan-rental.php';
+  </script>";
+}
 
 $detail_Id = $_POST['idTarget'];
 $data = fetchData(
   "SELECT * FROM rental LEFT JOIN customer ON customer.id_customer = rental.id_customer WHERE rental.id_customer = $detail_Id AND customer.id_customer = $detail_Id"
 );
-var_dump($_POST);
 
 $statusKendaraan = fetchData("SELECT nama_mobil, nomor_polisi FROM data_kendaraan WHERE status=1");
 
@@ -21,14 +22,14 @@ $statusKendaraan = fetchData("SELECT nama_mobil, nomor_polisi FROM data_kendaraa
 
 <link rel="stylesheet" href="../../css/input-rental-mobil.min.css">
 
-<h1>Input Data Pemesan Rental Mobil</h1>
+<h1>Edit Data Pesanan Rental</h1>
 <div class="container">
   <hr>
 </div>
 <div class="container-fluid wrapper-all">
   <div class="row">
     <div class="wrapper-tambah g-0">
-      <h4 class="container-fluid header">Tambah Data</h4>
+      <h4 class="container-fluid header">Edit Data</h4>
       <form action="" class="" method="post" id="form-data" enctype="multipart/form-data">
         <div class="container g-3">
           <div class="row">

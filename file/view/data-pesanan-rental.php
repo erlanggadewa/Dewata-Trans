@@ -3,7 +3,6 @@ include "../_partials/head.php";
 
 $data = fetchData("SELECT rental.id_customer, customer.nama_penyewa, rental.kota_tujuan, rental.tanggal_sewa, rental.tanggal_kembali FROM customer INNER JOIN rental ON customer.id_customer = rental.id_customer");
 
-var_dump($data);
 
 ?>
 
@@ -21,7 +20,7 @@ var_dump($data);
 				<div class="col-8 form-group ">
 					<input type="text" class="form-control" id="search" placeholder="Masukan keyword pencarian ...">
 				</div>
-				<div class="row wrapper-table" style="overflow-x:auto;">
+				<div class="row wrapper-table" style="overflow-x:auto;" id="wrapper-search">
 					<?php if ($data) : ?>
 						<table class="styled-table col-12">
 							<thead>
@@ -58,17 +57,17 @@ var_dump($data);
 						<h3 style="text-align: center; margin: 50px 0">Data Kosong</h3>
 					<?php endif; ?>
 				</div>
-				<div class="wrapper-pagination">
+				<!-- <div class="wrapper-pagination">
 					<p>showing <?= 1 ?> to <?= 7 ?> of <?= 10 ?> entries</p>
 					<div class="pagination">
 						<i class="fas fa-caret-square-left"></i>
 						<h6><?= 1 ?></h6>
 						<i class="fas fa-caret-square-right"></i>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
 </div>
-
+<script src="../../js/ajax-data-pesanan-rental.js"></script>
 <?php include "../_partials/foot.php"; ?>

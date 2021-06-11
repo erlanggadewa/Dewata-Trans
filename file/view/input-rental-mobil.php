@@ -27,11 +27,11 @@ if (isset($_POST['submit']))
 					<div class="row">
 						<div class="col-12 form-group">
 							<label for="nama-penyewa">Nama Penyewa</label>
-							<input required type="text" class="form-control" placeholder="Enter name" id="nama-penyewa" name="nama_penyewa">
+							<input required type="text" class="form-control" placeholder="Masukan nama" id="nama-penyewa" name="nama_penyewa">
 						</div>
 						<div class="col-6 form-group">
 							<label for="no-hp">No. HP</label>
-							<input required type="number" class="form-control" placeholder="Enter phone number" id="no-hp" name="no_hp">
+							<input required type="number" class="form-control" placeholder="Masukan No. HP" id="no-hp" name="no_hp">
 						</div>
 						<div class="col-6 form-group">
 							<label for="gender">Jenis Kelamin</label>
@@ -43,7 +43,7 @@ if (isset($_POST['submit']))
 						</div>
 						<div class="col-12 form-group">
 							<label for="alamat-penyewa">Alamat</label>
-							<textarea required type="text" class="form-control" placeholder="Enter address" id="alamat-penyewa" name="alamat_penyewa"></textarea>
+							<textarea required type="text" class="form-control" placeholder="Masukan alamat" id="alamat-penyewa" name="alamat_penyewa"></textarea>
 						</div>
 						<div class="col-6 form-group">
 							<label for="tanggal-sewa">Tanggal Sewa</label>
@@ -55,11 +55,11 @@ if (isset($_POST['submit']))
 						</div>
 						<div class="col-6 form-group">
 							<label for="kota-asal">Kota Asal</label>
-							<input required type="text" class="form-control" placeholder="Enter origin" id="kota-asal" name="kota_asal">
+							<input required type="text" class="form-control" placeholder="Masukan kota asal" id="kota-asal" name="kota_asal">
 						</div>
 						<div class="col-6 form-group">
 							<label for="kota-tujuan">Kota Tujuan</label>
-							<input required type="text" class="form-control" placeholder="Enter destination" id="kota-tujuan" name="kota_tujuan">
+							<input required type="text" class="form-control" placeholder="Masukan daerah tujuan" id="kota-tujuan" name="kota_tujuan">
 						</div>
 						<div class="col-12">
 							<div class="form-check form-switch ">
@@ -69,11 +69,11 @@ if (isset($_POST['submit']))
 						</div>
 						<div class="col-6 form-group group-supir d-none">
 							<label for="nama-supir">Nama Supir</label>
-							<input type="text" class="form-control" placeholder="Enter color" id="nama-supir" name="nama_supir">
+							<input type="text" class="form-control" placeholder="Masukan nama" id="nama-supir" name="nama_supir">
 						</div>
 						<div class="col-6 form-group group-supir d-none">
 							<label for="no-hp-supir">No. HP Supir</label>
-							<input type="number" class="form-control" placeholder="Enter color" id="no-hp-supir" name="no_hp_supir">
+							<input type="number" class="form-control" placeholder="Masukan No. HP" id="no-hp-supir" name="no_hp_supir">
 						</div>
 						<div class="col-6 form-group">
 							<label for="pilih-kendaraan">Pilih Kendaraan</label>
@@ -86,7 +86,7 @@ if (isset($_POST['submit']))
 						</div>
 						<div class="col-6 form-group">
 							<label for="total-harga">Total Harga</label>
-							<input required type="number" class="form-control" placeholder="Enter price" id="total-harga" name="total_harga">
+							<input required type="number" class="form-control" placeholder="Masukan total harga" id="total-harga" name="total_harga">
 						</div>
 						<div class="form-group">
 							<label for="gambar-mobil">Gambar Penyewa</label>

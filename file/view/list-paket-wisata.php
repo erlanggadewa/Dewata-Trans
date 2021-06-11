@@ -53,7 +53,7 @@ $data = fetchData("SELECT id_paket, nama_paket, tujuan FROM paket_wisata");
 					<div class="col-8 form-group ">
 						<input type="text" class="form-control" id="search" placeholder="Masukan keyword ...">
 					</div>
-					<div class="row wrapper-table" style="overflow-x:auto;">
+					<div class="row wrapper-table" style="overflow-x:auto;" id="wrapper-search">
 						<?php if ($data) : ?>
 							<table class="styled-table col-12">
 								<thead>
@@ -86,18 +86,18 @@ $data = fetchData("SELECT id_paket, nama_paket, tujuan FROM paket_wisata");
 							<h3 style="text-align: center; margin: 50px 0">Data Kosong</h3>
 						<?php endif; ?>
 					</div>
-					<div class="wrapper-pagination">
+					<!-- <div class="wrapper-pagination">
 						<p>showing <?= 1 ?> to <?= 7 ?> of <?= 10 ?> entries</p>
 						<div class="pagination">
 							<i class="fas fa-caret-square-left"></i>
 							<h6><?= 1 ?></h6>
 							<i class="fas fa-caret-square-right"></i>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
+<script src="../../js/ajax-list-paket-wisata.js"></script>
 <?php include "../_partials/foot.php"; ?>

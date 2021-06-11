@@ -2,13 +2,13 @@
 include "../_partials/head.php";
 
 if (isset($_POST['submit_edit'])) {
-	if (editDataKendaraan($_POST))
-		echo "<script>
+	editDataKendaraan($_POST);
+	echo "<script>
             alert('Data Berhasil Edit');
             location.href = 'data-kendaraan.php';
         </script>";
 }
-$id = $_POST['idTarget'];
+$id = $_POST['nomor_polisi'];
 $data = fetchData("SELECT * FROM data_kendaraan WHERE nomor_polisi='$id'");
 
 $listKendaraan = fetchData("SELECT * FROM data_kendaraan");
@@ -120,18 +120,18 @@ $listKendaraan = fetchData("SELECT * FROM data_kendaraan");
 							<h3 style=" text-align: center; margin: 50px 0">Data Kosong</h3>
 						<?php endif; ?>
 					</div>
-					<div class="wrapper-pagination">
+					<!-- <div class="wrapper-pagination">
 						<p>showing <?= 1 ?> to <?= 7 ?> of <?= 10 ?> entries</p>
 						<div class="pagination">
 							<i class="fas fa-caret-square-left"></i>
 							<h6><?= 1 ?></h6>
 							<i class="fas fa-caret-square-right"></i>
-						</div>
-					</div>
+						</div> -->
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 <script src="../../js/ajax-data-kendaraan.js"></script>
 <?php include "../_partials/foot.php"; ?>

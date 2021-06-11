@@ -9,11 +9,12 @@ if (isset($_POST['submit']))
 		</script>";
 $idTarget = $_POST['idTarget'];
 $data = fetchData("SELECT * FROM paket_wisata WHERE id_paket=$idTarget");
+$daftarPaket = fetchData("SELECT * FROM paket_wisata");
 ?>
 
 <link rel="stylesheet" href="../../css/list-paket-wisata.css">
 
-<h1>List Paket Wisata</h1>
+<h1>Edit List Paket Wisata</h1>
 <div class="container">
   <hr>
 </div>
@@ -21,7 +22,7 @@ $data = fetchData("SELECT * FROM paket_wisata WHERE id_paket=$idTarget");
   <div class="row" style="margin-top:10px">
     <div class="input-kendaraan col-lg-5">
       <div class="wrapper-tambah">
-        <h4 class="container-fluid header">Tambah Data</h4>
+        <h4 class="container-fluid header">Edit Data</h4>
         <form action="" class="" method="post" id="form-data">
           <div class="container g-3">
             <div class="row">
@@ -55,7 +56,7 @@ $data = fetchData("SELECT * FROM paket_wisata WHERE id_paket=$idTarget");
             <input type="text" class="form-control" id="search" placeholder="Masukan keyword ...">
           </div>
           <div class="row wrapper-table" style="overflow-x:auto;">
-            <?php if ($data) : ?>
+            <?php if ($daftarPaket) : ?>
               <table class="styled-table col-12">
                 <thead>
                   <tr>
@@ -67,7 +68,7 @@ $data = fetchData("SELECT * FROM paket_wisata WHERE id_paket=$idTarget");
                 </thead>
                 <tbody>
                   <?php $nomor = 1; ?>
-                  <?php foreach ($data as $row) : ?>
+                  <?php foreach ($daftarPaket as $row) : ?>
                     <tr>
                       <td><?= $nomor++ ?></td>
                       <td><?= $row['nama_paket'] ?></td>
@@ -87,14 +88,14 @@ $data = fetchData("SELECT * FROM paket_wisata WHERE id_paket=$idTarget");
               <h3 style="text-align: center; margin: 50px 0">Data Kosong</h3>
             <?php endif; ?>
           </div>
-          <div class="wrapper-pagination">
+          <!-- <div class="wrapper-pagination">
             <p>showing <?= 1 ?> to <?= 7 ?> of <?= 10 ?> entries</p>
             <div class="pagination">
               <i class="fas fa-caret-square-left"></i>
               <h6><?= 1 ?></h6>
               <i class="fas fa-caret-square-right"></i>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

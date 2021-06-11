@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $server = "localhost";
 $username = "root";
 $pass = "";
@@ -53,12 +55,9 @@ function editDataKendaraan($data)
     $nomor_polisi = htmlspecialchars($data["nomor_polisi"]);
     $tahun_beli = htmlspecialchars($data["tahun_beli"]);
 
-    $gambarLama = htmlspecialchars($data["gambar_lama"]);
-    if ($_FILES["gambar_mobil"]["error"] === 4) {
-        $gambar = htmlspecialchars($gambarLama);
-    } else {
-        $gambar = uploadGambar();
-    }
+
+    $gambar = uploadGambar();
+
 
     $query = "UPDATE $tb_data_kendaraan SET
         merek_mobil = '$nama_merek',
@@ -198,7 +197,7 @@ function inputDataWisata($data)
 
     $kendaraan = htmlspecialchars($data["pilih_kendaraan"]);
     $total_harga = htmlspecialchars($data["total_harga"]);
-    $gambar_penyewa = htmlspecialchars($data["gambar_penyewa"]);
+    $gambar_penyewa = uploadGambar();
 
 
     $query = "INSERT INTO $tb_data_customer VALUES(default,'$nama_penyewa','$no_hp','$gender','$alamat_penyewa','$gambar_penyewa')";
@@ -215,6 +214,69 @@ function inputDataWisata($data)
     $id_paket = $id_paket[0]['id_paket'];
 
     $query = "INSERT INTO $tb_data_rental VALUES(default,'$last_id','$id_paket','$nomor_polisi','$tanggal_sewa','$tanggal_kembali','$kota_asal','$nama_paket','$nama_supir','$no_hp_supir','$kendaraan','$total_harga')";
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+// * EDIT DATA WISATA
+function editDataWisata($data)
+{
+    global $conn;
+    $tb_data_customer = 'customer';
+    $tb_data_rental = 'order_wisata';
+
+    $id = htmlspecialchars($data["idTarget"]);
+    $nama_penyewa = htmlspecialchars($data["nama_penyewa"]);
+    $no_hp = htmlspecialchars($data["no_hp"]);
+    $gender = htmlspecialchars($data["gender"]);
+    $alamat_penyewa = htmlspecialchars($data["alamat_penyewa"]);
+    $tanggal_sewa = htmlspecialchars($data["tanggal_sewa"]);
+    $tanggal_kembali = htmlspecialchars($data["tanggal_kembali"]);
+    $kota_asal = htmlspecialchars($data["kota_asal"]);
+    $nama_paket = htmlspecialchars($data["nama_paket"]);
+
+    $nama_supir = htmlspecialchars($data["nama_supir"]);
+    if (!$nama_supir) $nama_supir = "Tidak memakai supir";
+
+    $no_hp_supir = htmlspecialchars($data["no_hp_supir"]);
+    if (!$no_hp_supir) $no_hp_supir = "-";
+
+    $kendaraan = htmlspecialchars($data["pilih_kendaraan"]);
+    $total_harga = htmlspecialchars($data["total_harga"]);
+    $gambar_penyewa = uploadGambar();
+
+
+    $query = "UPDATE $tb_data_customer SET
+    nama_penyewa = '$nama_penyewa',
+    no_hp = '$no_hp',
+    jenis_kelamin = '$gender',
+    alamat = '$alamat_penyewa',
+    gambar_customer = '$gambar_penyewa' 
+    WHERE id_customer = $id";
+    mysqli_query($conn, $query);
+
+
+    //  ! get data nomor polisi using regex betwen bracket ()
+    preg_match('#\((.*?)\)#', $kendaraan, $nomor_polisi);
+    $nomor_polisi = $nomor_polisi[1];
+
+
+    $id_paket = fetchData("SELECT id_paket FROM paket_wisata WHERE nama_paket='$nama_paket'");
+    $id_paket = $id_paket[0]['id_paket'];
+
+    $query = "UPDATE $tb_data_rental SET
+    id_paket = '$id_paket',
+    nomor_polisi = '$nomor_polisi',
+    tanggal_sewa = '$tanggal_sewa',
+    tanggal_kembali = '$tanggal_kembali',
+    kota_asal = '$kota_asal',
+    nama_paket = '$nama_paket',
+    nama_supir = '$nama_supir',
+    no_hp_supir = '$no_hp_supir',
+    nama_mobil = '$kendaraan',
+    total_harga_wisata = '$total_harga' 
+    WHERE id_customer = $id";
     mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
@@ -258,6 +320,15 @@ function editListPaket($data)
     return mysqli_affected_rows($conn);
 }
 
+// * CARI DATA KEENDARAAN DI DATABASE
+function findDataPaket($keyword)
+{
+    $jenisQuery = "SELECT * FROM paket_wisata WHERE 
+		nama_paket LIKE '%$keyword%' OR
+		tujuan LIKE '%$keyword%'";
+
+    return fetchData($jenisQuery);
+}
 
 
 // * UPLOAD GAMBAR 
@@ -274,10 +345,8 @@ function uploadGambar()
     // * Mengambil ektensi gambar
     $ektensiGambar = explode(".", $namaGambar);
     $ektensiGambar = strtolower(end($ektensiGambar));
-
     if ($errorGambar === 4) {
-
-        return false;
+        return ("../../img/no_img.png");
     } else if ($sizeGambar > 10000000) {
         echo "<script>
 				alert('Size Gambar Melebihi 10 mega byte');		
@@ -297,7 +366,7 @@ function uploadGambar()
     }
 }
 
-// * CARI DATA DI DATABASE
+// * CARI DATA KEENDARAAN DI DATABASE
 function findDataKendaraan($keyword)
 {
     $jenisQuery = "SELECT * FROM data_kendaraan WHERE 
@@ -305,4 +374,82 @@ function findDataKendaraan($keyword)
 		nama_mobil LIKE '%$keyword%'";
 
     return fetchData($jenisQuery);
+}
+
+// * CARI DATA DI DATABASE
+function findDataRental($keyword)
+{
+    $jenisQuery = "SELECT customer.id_customer, customer.nama_penyewa, rental.kota_tujuan, rental.tanggal_sewa, rental.tanggal_kembali FROM customer 
+    INNER JOIN rental ON customer.id_customer = rental.id_customer 
+    WHERE customer.nama_penyewa LIKE '%$keyword%'OR 
+    rental.kota_tujuan LIKE '%$keyword%' OR
+    rental.tanggal_sewa LIKE '%$keyword%' OR
+    rental.tanggal_kembali LIKE '%$keyword%'";
+
+    return fetchData($jenisQuery);
+}
+// * CARI DATA DI DATABASE
+function findDataWisata($keyword)
+{
+    $jenisQuery = "SELECT customer.id_customer, customer.nama_penyewa, order_wisata.nama_paket, order_wisata.tanggal_sewa, order_wisata.tanggal_kembali FROM customer 
+    INNER JOIN order_wisata ON customer.id_customer = order_wisata.id_customer 
+    WHERE customer.nama_penyewa LIKE '%$keyword%'OR 
+    order_wisata.nama_paket LIKE '%$keyword%' OR
+    order_wisata.tanggal_sewa LIKE '%$keyword%' OR
+    order_wisata.tanggal_kembali LIKE '%$keyword%'";
+
+    return fetchData($jenisQuery);
+}
+
+// * FUNCTION AKUN
+function resetAkun($keyword)
+{
+    $keyword = hash('sha512', $keyword);
+    $hash = hash('sha512', 'dewata707');
+    if ($keyword === $hash)
+        echo "<script>
+        alert('Token anda benar, silahkan input username dan password baru');
+        location.href = 'reset-akun.php';
+        </script>";
+    else echo "<script>alert('Token Salah')</script>";
+}
+
+function addAccount($data)
+{
+    global $conn;
+    $userName = strtolower($data["username"]);
+    $password = password_hash(mysqli_real_escape_string($conn, $data["password"]), PASSWORD_DEFAULT);
+
+    $jenisQuery = "DELETE FROM data_akun WHERE '$userName' = username";
+    mysqli_query($conn, $jenisQuery);
+
+    $jenisQuery = "INSERT INTO data_akun VALUE (default,'$userName', '$password')";
+    mysqli_query($conn, $jenisQuery);
+    return mysqli_affected_rows($conn);
+}
+
+function loginAccount($jenisQuery, $data)
+{
+    global $conn;
+    $result = mysqli_query($conn, $jenisQuery);
+    $rowData = mysqli_fetch_assoc($result);
+    if (mysqli_num_rows($result) === 1) {
+        if (password_verify($data["password"], $rowData["password"])) {
+            $_SESSION["login"] = true;
+            if (isset($data["remember"])) {
+                setcookie('login', 'true', time() + 86400, '/'); // ! Setting cookie 1 hari
+            }
+            header("Location: file/view/index.php");
+        }
+    }
+}
+// * END FUNCTION AKUN
+function cekLogin()
+{
+    if (!isset($_SESSION["login"])) {
+        if (!$_SESSION["login"]) {
+            header("Location: ../../index.php");
+            exit();
+        }
+    }
 }
