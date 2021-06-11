@@ -406,12 +406,15 @@ function resetAkun($keyword)
 {
     $keyword = hash('sha512', $keyword);
     $hash = hash('sha512', 'dewata707');
-    if ($keyword === $hash)
+    if ($keyword === $hash) {
+        $valid_status = hash('sha512', 'valid');
+        $token = hash('sha512', 'dewata707');
+        $_SESSION[$valid_status] = $token;
         echo "<script>
         alert('Token anda benar, silahkan input username dan password baru');
         location.href = 'reset-akun.php';
         </script>";
-    else echo "<script>alert('Token Salah')</script>";
+    } else echo "<script>alert('Token Salah')</script>";
 }
 
 function addAccount($data)

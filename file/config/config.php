@@ -68,6 +68,12 @@ $sql = [
         FOREIGN KEY (`id_paket`) REFERENCES paket_wisata(`id_paket`),
         FOREIGN KEY (`id_customer`) REFERENCES customer(`id_customer`),
         PRIMARY KEY (`id_transaksi`)
+    );",
+    "CREATE TABLE `data_akun` (
+        `id_akun` INT(10) NOT NULL AUTO_INCREMENT,
+        `username` VARCHAR(200) NOT NULL,
+        `password` VARCHAR(1000) NOT NULL,
+        PRIMARY KEY (`id_akun`)
     );"
 ];
 

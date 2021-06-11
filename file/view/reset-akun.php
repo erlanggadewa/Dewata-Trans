@@ -1,13 +1,21 @@
 <?php
 include "../config/function.php";
+$valid_status = hash('sha512', 'valid');
+$token = hash('sha512', 'dewata707');
 
+if (!($_SESSION[$valid_status] == $token)) {
+  echo "<script>
+					alert('Harap masukan token');
+          location.href = 'token.php';
+					</script>";
+}
 if (isset($_POST["submit"])) {
   if ($_POST["password"] === $_POST["konfirmasiPassword"]) {
     $username = strtolower($_POST["username"]);
     if (addAccount($_POST) > 0) {
       echo "<script>
 					alert('Registrasi Berhasil');
-          location.href = '../../login.php';
+          location.href = '../../index.php';
 					</script>";
     } else {
       echo "<script>

@@ -1,8 +1,10 @@
 <?php
 include "../config/function.php";
+
 if (isset($_POST['submit'])) {
   resetAkun($_POST['token']);
 }
+
 ?>
 
 <!DOCTYPE html>

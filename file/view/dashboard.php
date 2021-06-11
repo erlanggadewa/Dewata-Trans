@@ -83,7 +83,5 @@ $data = fetchData("SELECT nomor_polisi, nama_mobil, merek_mobil, status FROM dat
 				<?php endforeach; ?>
 			</tbody>
 		</table>
-	<?php else : ?>
-		<h3 style=" text-align: center; margin: 50px 0">Data Kosong</h3>
 	<?php endif; ?>
 </div>

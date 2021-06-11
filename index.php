@@ -1,4 +1,5 @@
 <?php
+include "file/config/config.php";
 include "file/config/function.php";
 
 
@@ -20,7 +21,7 @@ if (isset($_SESSION["login"])) {
 if (isset($_POST["submit"])) {
   $username = $_POST["username"];
   $jenisQuery = "SELECT * FROM data_akun WHERE username = '$username'";
-  loginAccount($jenisQuery, $_POST);
+  if (!loginAccount($jenisQuery, $_POST)) echo "<script>alert('Username / Password anda tidak ditemukan')</script>";
 }
 ?>
 
