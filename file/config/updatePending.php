@@ -1,4 +1,7 @@
 <?php
+
+
+
 // * Set semua ke 1
 mysqli_query($conn, "UPDATE data_kendaraan SET status=1");
 

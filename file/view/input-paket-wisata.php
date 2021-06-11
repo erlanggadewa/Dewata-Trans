@@ -60,7 +60,7 @@ if (isset($_POST['submit']))
 						</div>
 						<div class="col-6 form-group">
 							<label for="pilih-paket">Pilih Paket Wisata</label>
-							<select required class="form-select" id="nama_pakey" name="nama_paket">
+							<select required class="form-select" id="nama_paket" name="nama_paket">
 								<option value="" disabled selected>Pilih Paket Wisata ...</option>
 								<?php foreach ($dataPaket as $row) : ?>
 									<option><?= $row['nama_paket'] ?></option>
