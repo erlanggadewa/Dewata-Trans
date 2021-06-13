@@ -1,5 +1,6 @@
 <?php
 include "../config/function.php";
+cekLogin();
 
 
 $keyword = $_GET['keyword'];

@@ -1,40 +1,38 @@
-$warna1: #eeebdd;
-$warna2: #810000;
-$warna3: #630000;
-$warna4: #1b1717;
+@font-face {
+  font-family: "MyWebFont";
+  src: url("../asset/Montserrat-Regular.ttf") format("truetype");
+}
 
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: "MyWebFont";
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  // border: 1px solid blue;
 }
 
 a {
-  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 
 body {
   margin: 0;
-  // background-color: whitesmoke;
-  // background-image: url(https://wallpapercave.com/wp/wp4772274.jpg);
   background-image: url(../img/cover_login.jpg);
   background-size: cover;
   section {
-    // padding-top: 150px;
-    padding: 150px 100px 0 100px;
+    padding: 20px 20px 0 20px;
     height: 100vh;
     .outer {
       float: left;
       width: 40%;
-      // height: 100%;
+      height: 585px;
       padding: 40px;
       .login {
         background-color: white;
-        padding: 30px;
+        padding: 70px 30px;
         border-radius: 15px;
         display: block;
+        height: 100%;
         margin: auto;
         width: 400px;
         img {
@@ -43,16 +41,8 @@ body {
           width: 165px;
           margin-bottom: 30px;
         }
-        // h1 {
-        //   color: black;
-        //   text-align: center;
-        //   padding-bottom: 45px;
-        //   border-bottom: 1px solid #c0c0c0;
-        //   font-size: 2.5rem;
-        // }
         form {
           input {
-            // background-color: #1b1717;
             border-radius: 10px;
             border: 1px solid black;
             padding: 15px 20px;
@@ -61,7 +51,11 @@ body {
             margin: auto;
             outline: 0;
             width: 100%;
-            // height: 50px;
+          }
+          .form-check {
+            input {
+              width: auto;
+            }
           }
           button {
             color: white;
@@ -82,28 +76,30 @@ body {
             color: #53a1cd;
           }
         }
+        p {
+          color: black;
+          text-align: left;
+          padding: 20px 0;
+        }
       }
       p {
         color: white;
         text-align: center;
-        padding: 10px;
+        padding: 15px;
       }
     }
     .dewataTrans {
       float: right;
       width: 60%;
-      padding: 20px;
+      padding: 70px;
       color: white;
-      // height: 100%;
       h1 {
         margin: 0;
-        // margin-top: 30px;
         font-size: 37pt;
       }
       p {
         font-size: 15pt;
         line-height: 1.5;
-        // margin-bottom: 50px;
       }
       a {
         color: white;
@@ -131,9 +127,6 @@ section::after {
   }
   body section .outer {
     width: 100%;
-  }
-  body section {
-    padding: 150px 0 0 0;
   }
 }
 

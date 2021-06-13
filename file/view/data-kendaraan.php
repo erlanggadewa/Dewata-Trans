@@ -28,32 +28,32 @@ $data = fetchData("SELECT nomor_polisi, nama_mobil, merek_mobil, status FROM dat
 						<div class="row">
 							<div class="col-12 form-group">
 								<label for="name-merk">Nama Merk</label>
-								<input type="text" class="form-control" placeholder="Enter merk" id="name-merk" name="nama_merek">
+								<input type="text" class="form-control" placeholder="Masukan merek" id="name-merk" name="nama_merek">
 							</div>
 							<div class="col-12 form-group">
 								<label for="nama-mobil">Nama Mobil</label>
-								<input type="text" class="form-control" placeholder="Enter name" id="nama-mobil" name="nama_mobil">
+								<input type="text" class="form-control" placeholder="Masukan nama mobil" id="nama-mobil" name="nama_mobil">
 							</div>
 							<div class="col-6 form-group">
 								<label for="warna-mobil">Warna Mobil</label>
-								<input type="text" class="form-control" placeholder="Enter color" id="warna-mobil" name="warna_mobil">
+								<input type="text" class="form-control" placeholder="Masukan warna mobil" id="warna-mobil" name="warna_mobil">
 							</div>
 							<div class="col-6 form-group">
 								<label for="jumlah-kursi">Jumlah Kursi</label>
-								<input type="number" class="form-control" placeholder="Enter number" id="jumlah-kursi" name="jumlah_kursi">
+								<input type="number" class="form-control" placeholder="Masukan jumlah kursi" id="jumlah-kursi" name="jumlah_kursi">
 							</div>
 							<div class="col-6 form-group">
 								<label for="nomor-polisi">Nomor Polisi</label>
-								<input type="text" class="form-control" placeholder="Enter color" id="nomor-polisi" name="nomor_polisi">
+								<input type="text" class="form-control" placeholder="Masukan nomor polisi" id="nomor-polisi" name="nomor_polisi">
 							</div>
 							<div class="col-6 form-group">
 								<label for="tahun-beli">Tahun Beli</label>
-								<input type="number" class="form-control" placeholder="Enter number" id="tahun-beli" name="tahun_beli">
+								<input type="number" class="form-control" placeholder="Masukan tahun beli" id="tahun-beli" name="tahun_beli">
 							</div>
 							<div class="form-group">
 								<label for="gambar-mobil">Gambar Mobil</label>
 								<br>
-								<input type="file" class="form-control-file" id="gambar-mobil" name="gambar_mobil" accept="image/*">
+								<input type="file" class="form-control-file" id="gambar-mobil" name="gambar" accept="image/*">
 							</div>
 							<div class="container wrapper-button">
 								<button type="submit" class="button button-green" name="submit" form="form-data">Submit</button>
@@ -114,14 +114,14 @@ $data = fetchData("SELECT nomor_polisi, nama_mobil, merek_mobil, status FROM dat
 							<h3 style=" text-align: center; margin: 50px 0">Data Kosong</h3>
 						<?php endif; ?>
 					</div>
-					<div class="wrapper-pagination">
-						<p>showing <?= 1 ?> to <?= 7 ?> of <?= 10 ?> entries</p>
+					<!-- <div class="wrapper-pagination"> -->
+					<!-- <p>showing <?= 1 ?> to <?= 7 ?> of <?= 10 ?> entries</p>
 						<div class="pagination">
 							<i class="fas fa-caret-square-left"></i>
 							<h6><?= 1 ?></h6>
 							<i class="fas fa-caret-square-right"></i>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>

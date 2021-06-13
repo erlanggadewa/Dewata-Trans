@@ -4,6 +4,10 @@ $total_penyewa = fetchData('SELECT COUNT(DISTINCT nama_penyewa) FROM customer')[
 
 $total_data_pesanan = fetchData('SELECT COUNT(*) FROM rental')[0]['COUNT(*)'] + fetchData('SELECT COUNT(*) FROM order_wisata')[0]['COUNT(*)'];
 
+$data = fetchData("SELECT nomor_polisi, nama_mobil, merek_mobil, status FROM data_kendaraan");
+
+
+
 
 ?>
 
@@ -43,40 +47,41 @@ $total_data_pesanan = fetchData('SELECT COUNT(*) FROM rental')[0]['COUNT(*)'] + 
 	</div>
 </div>
 <div class="row wrapper-table" style="overflow-x:auto;">
-	<table class="styled-table col-12">
-		<thead>
-			<tr>
-				<th>No.</th>
-				<th>Mobil</th>
-				<th>Status</th>
-				<th>Aksi</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>1</td>
-				<td>Toyota</td>
-				<td>Tersedia</td>
-				<td><i class="fas fa-eye"></i></td>
-			</tr>
-			<tr>
-				<td>1</td>
-				<td>Toyota</td>
-				<td>Tersedia</td>
-				<td><i class="fas fa-eye"></i></td>
-			</tr>
-			<tr>
-				<td>1</td>
-				<td>Toyota</td>
-				<td>Tersedia</td>
-				<td><i class="fas fa-eye"></i></td>
-			</tr>
-			<tr class="active-row">
-				<td>2</td>
-				<td>Toyota</td>
-				<td>Tersedia</td>
-				<td><i class="fas fa-eye"></i></td>
-			</tr>
-		</tbody>
-	</table>
+	<?php if ($data) : ?>
+		<table class="styled-table col-12">
+			<thead>
+				<tr>
+					<th>No.</th>
+					<th>Mobil</th>
+					<th>Merk</th>
+					<th>Status</th>
+					<th>Aksi</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php $nomor = 1; ?>
+				<?php foreach ($data as $row) : ?>
+					<tr>
+						<td><?= $nomor++ ?></td>
+						<td><?= $row['nama_mobil'] ?></td>
+						<td><?= $row['merek_mobil'] ?></td>
+						<?php if ($row['status'] == 1) : ?>
+							<td>Tersedia</td>
+						<?php else : ?>
+							<td>Tidak Tersedia</td>
+						<?php endif; ?>
+
+						<td>
+							<form action="detail-data-kendaraan.php" method="get">
+								<?php $id_delete = $row['nomor_polisi'] ?>
+								<button name="detail_Id" value="<?= $id_delete ?>" style="border:none; background-color : transparent;"><i class=" fas fa-eye"></i>
+								</button>
+							</form>
+						</td>
+
+					</tr>
+				<?php endforeach; ?>
+			</tbody>
+		</table>
+	<?php endif; ?>
 </div>

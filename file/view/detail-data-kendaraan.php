@@ -16,10 +16,10 @@ $data = fetchData("SELECT * FROM data_kendaraan WHERE nomor_polisi = '$detail_Id
 		<div class="wrapper-header g-0">
 			<h4 class="container-fluid header">Detail Kendaraan</h4>
 			<div class="row">
-				<div class="col-12 col-md-6 g-6">
+				<div class="col-12 col-md-4 g-6">
 					<img src="<?= $data[0]['gambar_mobil'] ?>" alt="" width="100%">
 				</div>
-				<div class="col-12 col-md-6 wrapper-data">
+				<div class="col-12 col-md-8 wrapper-data">
 					<pre><span>
 Nama			:	<?= $data[0]['nama_mobil'] ?> 
 Merk			:	<?= $data[0]['merek_mobil'] ?> 
@@ -30,7 +30,7 @@ Tahun Beli		:	<?= $data[0]['tahun_beli'] ?></span></pre>
 					<form action="edit-data-kendaraan.php" method="post" style="display: inline-block;">
 						<input type="text" class="d-none" value="data_kendaraan" name="tb_name">
 						<input type="text" class="d-none" value="data-kendaraan.php" name="src_page">
-						<button type="" class="button button-primary" name="idTarget" value="<?= $data[0]['nomor_polisi'] ?>">Ubah</button>
+						<button type="" class="button button-primary" name="nomor_polisi" value="<?= $data[0]['nomor_polisi'] ?>">Ubah</button>
 					</form>
 					<form action="../config/hapus.php" method="post" style="display: inline-block;">
 						<input type="text" class="d-none" value="data_kendaraan" name="tb_name">

@@ -1,4 +1,6 @@
 <?php
+
+
 $data1 = fetchData("SELECT
 nomor_polisi,
 nama_mobil,

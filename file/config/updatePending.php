@@ -1,4 +1,10 @@
 <?php
+
+
+
+// * Set semua ke 1
+mysqli_query($conn, "UPDATE data_kendaraan SET status=1");
+
 $data1 = fetchData("SELECT
 nomor_polisi,
 nama_mobil,

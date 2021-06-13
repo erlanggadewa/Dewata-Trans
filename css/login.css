@@ -1,5 +1,9 @@
+@font-face {
+  font-family: "MyWebFont";
+  src: url("../asset/Montserrat-Regular.ttf") format("truetype");
+}
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: "MyWebFont";
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
@@ -7,7 +11,8 @@
 }
 
 a {
-  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 
 body {
@@ -15,34 +20,31 @@ body {
   background-image: url(../img/cover_login.jpg);
   background-size: cover;
 }
-
 body section {
-  padding: 150px 100px 0 100px;
+  padding: 20px 20px 0 20px;
   height: 100vh;
 }
-
 body section .outer {
   float: left;
   width: 40%;
+  height: 585px;
   padding: 40px;
 }
-
 body section .outer .login {
   background-color: white;
-  padding: 30px;
+  padding: 70px 30px;
   border-radius: 15px;
   display: block;
+  height: 100%;
   margin: auto;
   width: 400px;
 }
-
 body section .outer .login img {
   display: block;
   margin: auto;
   width: 165px;
   margin-bottom: 30px;
 }
-
 body section .outer .login form input {
   border-radius: 10px;
   border: 1px solid black;
@@ -53,7 +55,9 @@ body section .outer .login form input {
   outline: 0;
   width: 100%;
 }
-
+body section .outer .login form .form-check input {
+  width: auto;
+}
 body section .outer .login form button {
   color: white;
   background-color: #53a1cd;
@@ -69,42 +73,40 @@ body section .outer .login form button {
   display: block;
   margin: auto;
 }
-
 body section .outer .login form button:hover {
   background-color: transparent;
   color: #53a1cd;
 }
-
+body section .outer .login p {
+  color: black;
+  text-align: left;
+  padding: 20px 0;
+}
 body section .outer p {
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
 }
-
 body section .dewataTrans {
   float: right;
   width: 60%;
-  padding: 20px;
+  padding: 70px;
   color: white;
 }
-
 body section .dewataTrans h1 {
   margin: 0;
   font-size: 37pt;
 }
-
 body section .dewataTrans p {
   font-size: 15pt;
   line-height: 1.5;
 }
-
 body section .dewataTrans a {
   color: white;
   background-color: #53a1cd;
   padding: 15px 30px;
   border-radius: 10px;
 }
-
 body section .dewataTrans img {
   float: right;
   width: 540px;
@@ -120,17 +122,13 @@ section::after {
   .dewataTrans {
     display: none;
   }
+
   body section .outer {
     width: 100%;
   }
-  body section {
-    padding: 150px 0 0 0;
-  }
 }
-
 @media only screen and (max-width: 490px) {
   body section .outer .login {
     width: 100%;
   }
 }
-/*# sourceMappingURL=login.css.map */
