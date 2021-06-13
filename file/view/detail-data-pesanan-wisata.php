@@ -18,10 +18,10 @@ $data = fetchData(
     <div class="wrapper-header g-0">
       <h4 class="container-fluid header">Detail Pesanan</h4>
       <div class="row">
-        <div class="col-12 col-md-6 g-6">
+        <div class="col-12 col-md-4 g-6">
           <img src="<?= $data[0]['gambar_customer'] ?>" alt="" width="100%">
         </div>
-        <div class="col-12 col-md-6 wrapper-data">
+        <div class="col-12 col-md-8 wrapper-data">
           <pre><span>
 Nama Penyewa      :	<?= $data[0]['nama_penyewa'] ?>
 
