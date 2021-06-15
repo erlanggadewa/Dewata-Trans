@@ -54,7 +54,7 @@ $sql = [
         PRIMARY KEY (`id_paket`)
     );",
     "CREATE TABLE `order_wisata` (
-        `id_transaksi` int(10) NOT NULL,
+        `id_transaksi` int(10) NOT NULL AUTO_INCREMENT,
         `id_customer` int(10) NOT NULL,
         `id_paket` int(10) NOT NULL,
         `nomor_polisi` varchar(20) NOT NULL,

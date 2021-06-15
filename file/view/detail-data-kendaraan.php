@@ -1,6 +1,5 @@
 <?php
 include "../_partials/head.php";
-
 $detail_Id = $_GET['detail_Id'];
 $data = fetchData("SELECT * FROM data_kendaraan WHERE nomor_polisi = '$detail_Id'");
 ?>

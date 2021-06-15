@@ -1,4 +1,5 @@
 <?php
+include "../_partials/head.php";
 $total_kendaraan = fetchData('SELECT COUNT(*) FROM data_kendaraan')[0]["COUNT(*)"];
 $total_penyewa = fetchData('SELECT COUNT(DISTINCT nama_penyewa) FROM customer')[0]["COUNT(DISTINCT nama_penyewa)"];
 
@@ -85,3 +86,4 @@ $data = fetchData("SELECT nomor_polisi, nama_mobil, merek_mobil, status FROM dat
 		</table>
 	<?php endif; ?>
 </div>
+<?php include "../_partials/foot.php"; ?>

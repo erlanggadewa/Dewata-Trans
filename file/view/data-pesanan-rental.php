@@ -1,6 +1,5 @@
 <?php
 include "../_partials/head.php";
-
 $data = fetchData("SELECT rental.id_customer, customer.nama_penyewa, rental.kota_tujuan, rental.tanggal_sewa, rental.tanggal_kembali FROM customer INNER JOIN rental ON customer.id_customer = rental.id_customer");
 
 

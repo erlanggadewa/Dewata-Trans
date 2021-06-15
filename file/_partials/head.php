@@ -1,9 +1,9 @@
 <?php
 include "../config/function.php";
+cekLogin();
 include "../config/updatePending.php";
 include "../config/updateOnGoing.php";
 $data = fetchData("SELECT * FROM `data_akun`");
-cekLogin();
 ?>
 
 <!DOCTYPE html>

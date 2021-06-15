@@ -100,7 +100,7 @@ function inputDataRental($data)
     $gambar_penyewa = uploadGambar();
 
 
-    $query = "INSERT INTO $tb_data_customer VALUES(default,'$nama_penyewa','$no_hp','$gender','$alamat_penyewa','$gambar_penyewa')";
+    $query = "INSERT INTO $tb_data_customer VALUES(NULL,'$nama_penyewa','$no_hp','$gender','$alamat_penyewa','$gambar_penyewa')";
     mysqli_query($conn, $query);
 
     $last_id = mysqli_insert_id($conn);
@@ -109,7 +109,7 @@ function inputDataRental($data)
     preg_match('#\((.*?)\)#', $kendaraan, $nomor_polisi);
     $nomor_polisi = $nomor_polisi[1];
 
-    $query = "INSERT INTO $tb_data_rental VALUES(default,'$last_id','$nomor_polisi','$tanggal_sewa','$tanggal_kembali','$kota_asal','$kota_tujuan','$nama_supir','$no_hp_supir','$kendaraan','$total_harga')";
+    $query = "INSERT INTO $tb_data_rental VALUES(NULL,'$last_id','$nomor_polisi','$tanggal_sewa','$tanggal_kembali','$kota_asal','$kota_tujuan','$nama_supir','$no_hp_supir','$kendaraan','$total_harga')";
     mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
@@ -200,7 +200,7 @@ function inputDataWisata($data)
     $gambar_penyewa = uploadGambar();
 
 
-    $query = "INSERT INTO $tb_data_customer VALUES(default,'$nama_penyewa','$no_hp','$gender','$alamat_penyewa','$gambar_penyewa')";
+    $query = "INSERT INTO $tb_data_customer VALUES(NULL,'$nama_penyewa','$no_hp','$gender','$alamat_penyewa','$gambar_penyewa')";
     mysqli_query($conn, $query);
 
     $last_id = mysqli_insert_id($conn);
@@ -213,7 +213,7 @@ function inputDataWisata($data)
     $id_paket = fetchData("SELECT id_paket FROM paket_wisata WHERE nama_paket='$nama_paket'");
     $id_paket = $id_paket[0]['id_paket'];
 
-    $query = "INSERT INTO $tb_data_rental VALUES(default,'$last_id','$id_paket','$nomor_polisi','$tanggal_sewa','$tanggal_kembali','$kota_asal','$nama_paket','$nama_supir','$no_hp_supir','$kendaraan','$total_harga')";
+    $query = "INSERT INTO $tb_data_rental VALUES(NULL,'$last_id','$id_paket','$nomor_polisi','$tanggal_sewa','$tanggal_kembali','$kota_asal','$nama_paket','$nama_supir','$no_hp_supir','$kendaraan','$total_harga')";
     mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
@@ -293,7 +293,7 @@ function inputListPaket($data)
     $tempat_wisata = htmlspecialchars($data["tempat-wisata"]);
     $fasilitas = htmlspecialchars($data["fasilitas"]);
 
-    $query = "INSERT INTO $tb_data_paket VALUES(default,'$nama_paket','$tempat_wisata','$fasilitas')";
+    $query = "INSERT INTO $tb_data_paket VALUES(NULL,'$nama_paket','$tempat_wisata','$fasilitas')";
     mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
@@ -427,7 +427,7 @@ function addAccount($data)
     $jenisQuery = "DELETE FROM data_akun WHERE '$userName' = username";
     mysqli_query($conn, $jenisQuery);
 
-    $jenisQuery = "INSERT INTO data_akun VALUE (default,'$userName', '$password')";
+    $jenisQuery = "INSERT INTO data_akun VALUE (NULL,'$userName', '$password')";
     mysqli_query($conn, $jenisQuery);
     return mysqli_affected_rows($conn);
 }
@@ -443,7 +443,7 @@ function loginAccount($jenisQuery, $data)
             if (isset($data["remember"])) {
                 setcookie('login', 'true', time() + 86400, '/'); // ! Setting cookie 1 hari
             }
-            header("Location: file/view/index.php");
+            header("Location: file/view/dashboard.php");
         }
     }
 }
@@ -453,7 +453,6 @@ function cekLogin()
     if (!isset($_SESSION["login"])) {
         if (!$_SESSION["login"]) {
             header("Location: ../../index.php");
-            exit();
         }
     }
 }

@@ -1,6 +1,5 @@
 <?php
 include "../_partials/head.php";
-
 if (isset($_POST['submit'])) {
 	if (inputDataKendaraan($_POST))
 		echo "<script>

@@ -1,6 +1,5 @@
 <?php
 include "../_partials/head.php";
-
 $data = fetchData("SELECT order_wisata.id_customer, customer.nama_penyewa, order_wisata.nama_paket, order_wisata.tanggal_sewa, order_wisata.tanggal_kembali FROM customer INNER JOIN order_wisata ON customer.id_customer = order_wisata.id_customer");
 ?>
 

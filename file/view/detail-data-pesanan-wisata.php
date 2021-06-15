@@ -25,7 +25,7 @@ $data = fetchData(
           <pre><span>
 Nama Penyewa      :	<?= $data[0]['nama_penyewa'] ?>
 
-No HP			  :	<?= $data[0]['no_hp_supir'] ?>
+No HP 			  :	<?= $data[0]['no_hp'] ?>
 
 Jenis Kelamin 	  :	<?= $data[0]['jenis_kelamin'] ?>
 
@@ -38,6 +38,10 @@ Tanggal Kembali     :     <?= $data[0]['tanggal_kembali'] ?>
 Kota Asal                 :      <?= $data[0]['kota_asal'] ?>
 
 Nama Paket            :     <?= $data[0]['nama_paket'] ?>
+
+Nama Supir             :     <?= $data[0]['nama_supir'] ?>
+
+No HP Supir		  :	<?= $data[0]['no_hp_supir'] ?>
 
 Mobil                       :     <?= $data[0]['nama_mobil'] ?>
 

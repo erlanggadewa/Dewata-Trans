@@ -1,6 +1,5 @@
 <?php
 include "../_partials/head.php";
-
 $detail_Id = $_GET['detail_Id'];
 $data = fetchData(
   "SELECT * FROM rental LEFT JOIN customer ON customer.id_customer = rental.id_customer WHERE rental.id_customer = $detail_Id AND customer.id_customer = $detail_Id"
@@ -25,7 +24,7 @@ $data = fetchData(
           <pre><span>
 Nama Penyewa      :	<?= $data[0]['nama_penyewa'] ?>
 
-No HP			  :	<?= $data[0]['no_hp_supir'] ?>
+No HP			  :	<?= $data[0]['no_hp'] ?>
 
 Jenis Kelamin 	  :	<?= $data[0]['jenis_kelamin'] ?>
 
