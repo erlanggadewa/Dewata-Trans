@@ -361,7 +361,8 @@ function uploadGambar()
         $namaGambarAcak = uniqid(uniqid());
         // ! memnindahkan gambar ke folder yang posisinya relatif terhadap file ini
         $namaGambarFinal = $namaGambarAcak . "." . $ektensiGambar;
-        move_uploaded_file($tmpName, "../../img/gambar_data/" . $namaGambarFinal);
+        $dirname = str_replace("\\", "/", dirname(dirname(getcwd())));
+        move_uploaded_file($tmpName, $dirname . "/img/gambar_data/" . $namaGambarFinal);
         return ("../../img/gambar_data/" . $namaGambarFinal);
     }
 }
