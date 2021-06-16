@@ -1,5 +1,6 @@
 <?php
 include "../config/function.php";
+cekLogin();
 $detail_Id = $_POST['idTarget'];
 
 $data = fetchData(

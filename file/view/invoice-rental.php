@@ -1,5 +1,6 @@
 <?php
 include "../config/function.php";
+cekLogin();
 $detail_Id = $_POST['idTarget'];
 $data = fetchData(
 	"SELECT * FROM rental LEFT JOIN customer ON customer.id_customer = rental.id_customer WHERE rental.id_customer = $detail_Id AND customer.id_customer = $detail_Id"
