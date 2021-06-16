@@ -1,4 +1,6 @@
 <?php
 // KICK WITHOUT ACCESS LOGIN
-include "config/function.php";
-cekLogin();
+echo ("<script>
+        alert('Access Forbidden');
+        location.href = '../index.php';
+        </script>");
