@@ -473,9 +473,12 @@ function loginAccount($jenisQuery, $data)
     if (mysqli_num_rows($result) === 1) {
         if (password_verify($data["password"], $rowData["password"])) {
             $_SESSION["login"] = true;
+            $_SESSION["id_akun"] = $rowData['id_akun'];
             if (isset($data["remember"])) {
-                setcookie('login', 'true', time() + 86400, '/'); // ! Setting cookie 1 hari
-                setcookie('login', 'true', time() + 86400, '/'); // ! Setting cookie 1 hari
+                $id = hash('sha512', 'id');
+                $value = hash('sha512', 'value');
+                setcookie($id, $rowData['id_akun'], time() + 86400, '/'); // ! Setting cookie 1 hari
+                setcookie($value, hash('sha512', $rowData['username']), time() + 86400, '/'); // ! Setting cookie 1 hari
             }
             header("Location: file/view/dashboard.php");
         }

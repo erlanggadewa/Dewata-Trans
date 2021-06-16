@@ -4,8 +4,13 @@ include "file/config/function.php";
 
 
 // * CEK SESSION & COOKIE LOGIN
-if (isset($_COOKIE["login"])) {
-  if ($_COOKIE["login"] == 'true') {
+$id = hash('sha512', 'id');
+$value = hash('sha512', 'value');
+if (isset($_COOKIE[$id]) && isset($_COOKIE[$value])) {
+
+  $id = $_COOKIE[$id];
+  $akun = fetchData("SELECT username FROM data_akun WHERE id_akun=$id");
+  if (hash('sha512', $akun[0]['username']) === $_COOKIE[$value]) {
     $_SESSION["login"] = true;
   }
 }

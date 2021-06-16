@@ -3,7 +3,10 @@ include "../config/function.php";
 cekLogin();
 include "../config/updatePending.php";
 include "../config/updateOnGoing.php";
-$data = fetchData("SELECT * FROM `data_akun`");
+if (isset($_SESSION["id_akun"])) {
+	$id = $_SESSION["id_akun"];
+	$data = fetchData("SELECT * FROM `data_akun` WHERE id_akun=$id");
+}
 ?>
 
 <!DOCTYPE html>
