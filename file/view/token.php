@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
         <img src="../../img/Logo Dewata.png" alt="" />
 
         <form action="" method="post">
-          <input type="text" name="token" id="token" placeholder="Input token reset ..." />
+          <input autocomplete="off" type="text" name="token" id="token" placeholder="Input token reset ..." />
           <br />
           <button type="submit" name="submit">Reset</button>
         </form>
