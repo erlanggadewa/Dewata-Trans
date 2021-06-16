@@ -1,5 +1,6 @@
 <?php
-
+include_once "../config/function.php";
+cekLogin();
 
 
 // * Set semua ke 1

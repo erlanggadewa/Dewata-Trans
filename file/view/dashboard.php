@@ -1,5 +1,6 @@
 <?php
 include "../_partials/head.php";
+cekLogin();
 $total_kendaraan = fetchData('SELECT COUNT(*) FROM data_kendaraan')[0]["COUNT(*)"];
 $total_penyewa = fetchData('SELECT COUNT(DISTINCT nama_penyewa) FROM customer')[0]["COUNT(DISTINCT nama_penyewa)"];
 

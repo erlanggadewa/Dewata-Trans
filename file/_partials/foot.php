@@ -1,3 +1,8 @@
+<?php
+include_once "../config/function.php";
+cekLogin();
+?>
+
 </div>
 </div>
 </div>

@@ -1,5 +1,6 @@
 <?php
-
+include_once "../config/function.php";
+cekLogin();
 
 $data1 = fetchData("SELECT
 nomor_polisi,

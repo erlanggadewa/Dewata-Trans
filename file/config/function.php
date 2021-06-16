@@ -450,9 +450,10 @@ function loginAccount($jenisQuery, $data)
 // * END FUNCTION AKUN
 function cekLogin()
 {
-    if (!isset($_SESSION["login"])) {
-        if (!$_SESSION["login"]) {
-            header("Location: ../../index.php");
-        }
+    if (!isset($_SESSION["login"]) || $_SESSION["login"] != true) {
+        echo ("<script>
+        alert('Harap login terlebih dahulu');
+        location.href = '../../index.php';
+        </script>");
     }
 }
