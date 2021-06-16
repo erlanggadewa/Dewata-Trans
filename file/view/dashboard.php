@@ -6,11 +6,18 @@ $total_penyewa = fetchData('SELECT COUNT(DISTINCT nama_penyewa) FROM customer')[
 
 $total_data_pesanan = fetchData('SELECT COUNT(*) FROM rental')[0]['COUNT(*)'] + fetchData('SELECT COUNT(*) FROM order_wisata')[0]['COUNT(*)'];
 
-$data = fetchData("SELECT nomor_polisi, nama_mobil, merek_mobil, status FROM data_kendaraan");
 
-
-
-
+// var_dump($_POST);
+if (isset($_POST['submit'])) {
+	$bulan = $_POST['bulan'];
+	$tahun = $_POST['tahun'];
+	$rekap = rekapData($bulan, $tahun);
+} else {
+	$bulan = date("m");
+	$tahun = date('Y');
+	$rekap = rekapData($bulan, $tahun);
+}
+$nameMonth = toMonthName($bulan);
 ?>
 
 <link rel="stylesheet" href="../../css/dashboard.min.css">
@@ -48,43 +55,109 @@ $data = fetchData("SELECT nomor_polisi, nama_mobil, merek_mobil, status FROM dat
 		</div>
 	</div>
 </div>
-<div class="row wrapper-table" style="overflow-x:auto;">
-	<?php if ($data) : ?>
-		<table class="styled-table col-12">
-			<thead>
-				<tr>
-					<th>No.</th>
-					<th>Mobil</th>
-					<th>Merk</th>
-					<th>Status</th>
-					<th>Aksi</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php $nomor = 1; ?>
-				<?php foreach ($data as $row) : ?>
-					<tr>
-						<td><?= $nomor++ ?></td>
-						<td><?= $row['nama_mobil'] ?></td>
-						<td><?= $row['merek_mobil'] ?></td>
-						<?php if ($row['status'] == 1) : ?>
-							<td>Tersedia</td>
-						<?php else : ?>
-							<td>Tidak Tersedia</td>
-						<?php endif; ?>
-
-						<td>
-							<form action="detail-data-kendaraan.php" method="get">
-								<?php $id_delete = $row['nomor_polisi'] ?>
-								<button name="detail_Id" value="<?= $id_delete ?>" style="border:none; background-color : transparent;"><i class=" fas fa-eye"></i>
-								</button>
-							</form>
-						</td>
-
-					</tr>
-				<?php endforeach; ?>
-			</tbody>
-		</table>
-	<?php endif; ?>
+<div class="container">
+	<hr>
 </div>
+<div class="container">
+	<form action="" id="form-rekap" method="post" style="margin-top:20px; padding: 20px 0;">
+		<div class="form-group">
+			<select name="bulan" class="form-select" style="width:auto; display:inline;">
+				<option value="<?= $bulan ?>" selected><?= $nameMonth ?></option>
+				<option value="01">January</option>
+				<option value="02">February</option>
+				<option value="03">March</option>
+				<option value="04">April</option>
+				<option value="05">Mey</option>
+				<option value="06">June</option>
+				<option value="07">July</option>
+				<option value="08">Agustus</option>
+				<option value="09">September</option>
+				<option value="10">October</option>
+				<option value="12">November</option>
+				<option value="12">Desember</option>
+			</select>
+			<select name="tahun" class="form-select" style="width:auto; display:inline;">
+				<?php
+				$mulai = date('Y') - 10;
+				for ($i = $mulai; $i <= date('Y'); $i++) {
+					$sel = $i == date('Y') ? ' selected="selected"' : '';
+					echo '<option value="' . $i . '"' . $sel . '>' . $i . '</option>';
+				}
+				?>
+			</select>
+			<button type="submit" class="button button-green" form="form-rekap" name="submit">Cari</button>
+	</form>
+</div>
+<div class="row">
+
+
+	<div class="col-lg-6">
+		<div class="wrapper-daftar">
+			<h4 class="container-fluid">Rekap Rental</h4>
+			<div class="container-fluid">
+				<div class="row wrapper-table" style="overflow-x:auto; ">
+					<table class="styled-table col-12">
+						<?php if ($rekap[0]) : ?>
+							<thead>
+								<tr>
+									<th>No.</th>
+									<th>Kendaraan</th>
+									<th>Tgl. Sewa</th>
+									<th>Total Penghasilan</th>
+							<tbody>
+								<?php $nomor = 1; ?>
+								<?php foreach ($rekap[0] as $row) : ?>
+									<tr>
+										<td><?= $nomor++ ?></td>
+										<td><?= $row['nama_mobil'] ?></td>
+										<td><?= $row['tanggal_sewa'] ?></td>
+										<td><?= $row['total_harga'] ?></td>
+										</td>
+									</tr>
+								<?php endforeach; ?>
+							<?php else : ?>
+								<h3 style=" text-align: center; margin: 50px 0">Data Kosong</h3>
+							<?php endif; ?>
+							</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="wrapper-daftar">
+			<h4 class="container-fluid">Rekap Wisata</h4>
+			<div class="container-fluid">
+				<div class="row wrapper-table" style="overflow-x:auto; ">
+					<table class="styled-table col-12">
+						<?php if ($rekap[1]) : ?>
+							<thead>
+								<tr>
+									<th>No.</th>
+									<th>Kendaraan</th>
+									<th>Tgl. Sewa</th>
+									<th>Total Penghasilan</th>
+							<tbody>
+								<?php $nomor = 1; ?>
+								<?php foreach ($rekap[1] as $row) : ?>
+									<tr>
+										<td><?= $nomor++ ?></td>
+										<td><?= $row['nama_mobil'] ?></td>
+										<td><?= $row['tanggal_sewa'] ?></td>
+										<td><?= $row['total_harga'] ?></td>
+										</td>
+									</tr>
+								<?php endforeach; ?>
+							<?php else : ?>
+								<h3 style=" text-align: center; margin: 50px 0">Data Kosong</h3>
+							<?php endif; ?>
+							</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
 <?php include "../_partials/foot.php"; ?>

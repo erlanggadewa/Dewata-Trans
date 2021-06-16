@@ -157,10 +157,25 @@ body .wrapper-data .data3 .data-pesanan .fas {
   font-size: calc(2vw + 2rem);
   color: #818181;
 }
-body .wrapper-table {
-  padding: 20px;
+body .wrapper-daftar {
+  background-color: white;
+  -webkit-box-shadow: 0 0 10px #5a5a5a;
+          box-shadow: 0 0 10px #5a5a5a;
+  margin: 0 0 20px 0;
 }
-body .wrapper-table .styled-table {
+body .wrapper-daftar h4 {
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  background-color: #97bfd6;
+}
+body .wrapper-daftar .form-group {
+  margin-top: 20px;
+}
+body .wrapper-daftar .wrapper-table {
+  padding: 0 10px;
+}
+body .wrapper-daftar .wrapper-table .styled-table {
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 0.9em;
@@ -170,25 +185,25 @@ body .wrapper-table .styled-table {
   -webkit-box-shadow: 0 0 10px #5a5a5a;
           box-shadow: 0 0 10px #5a5a5a;
 }
-body .wrapper-table .styled-table thead tr {
+body .wrapper-daftar .wrapper-table .styled-table thead tr {
   background-color: #009879;
   color: #ffffff;
   text-align: left;
 }
-body .wrapper-table .styled-table th,
-body .wrapper-table .styled-table td {
+body .wrapper-daftar .wrapper-table .styled-table th,
+body .wrapper-daftar .wrapper-table .styled-table td {
   padding: 12px 15px;
 }
-body .wrapper-table .styled-table tbody tr {
+body .wrapper-daftar .wrapper-table .styled-table tbody tr {
   border-bottom: 1px solid #dddddd;
 }
-body .wrapper-table .styled-table tbody tr {
+body .wrapper-daftar .wrapper-table .styled-table tbody tr {
   background-color: #f3f3f3;
 }
-body .wrapper-table .styled-table tbody tr:last-of-type {
+body .wrapper-daftar .wrapper-table .styled-table tbody tr:last-of-type {
   border-bottom: 2px solid #009879;
 }
-body .wrapper-table .styled-table tbody tr.active-row {
+body .wrapper-daftar .wrapper-table .styled-table tbody tr.active-row {
   font-weight: bold;
   color: #009879;
 }

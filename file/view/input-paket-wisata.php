@@ -28,11 +28,11 @@ if (isset($_POST['submit']))
 					<div class="row">
 						<div class="col-12 form-group">
 							<label for="nama-penyewa">Nama Penyewa</label>
-							<input type="text" class="form-control" placeholder="Masukan nama" id="nama-penyewa" name="nama_penyewa" required>
+							<input autocomplete="off" type="text" class="form-control" placeholder="Masukan nama" id="nama-penyewa" name="nama_penyewa" required>
 						</div>
 						<div class="col-6 form-group">
 							<label for="no-hp">No. HP</label>
-							<input type="text" class="form-control" placeholder="Masukan No. HP" id="no-hp" name="no_hp" required>
+							<input autocomplete="off" type="text" class="form-control" placeholder="Masukan No. HP" id="no-hp" name="no_hp" required>
 						</div>
 						<div class="col-6 form-group">
 							<label for="gender">Jenis Kelamin</label>
@@ -48,15 +48,15 @@ if (isset($_POST['submit']))
 						</div>
 						<div class="col-6 form-group">
 							<label for="tanggal-sewa">Tanggal Berangkat</label>
-							<input type="date" class="form-control" id="tanggal-sewa" name="tanggal_sewa" required>
+							<input autocomplete="off" type="date" class="form-control" id="tanggal-sewa" name="tanggal_sewa" required>
 						</div>
 						<div class="col-6 form-group">
 							<label for="tanggal-kembali">Tanggal Kembali</label>
-							<input type="date" class="form-control" id="tanggal-kembali" name="tanggal_kembali" required>
+							<input autocomplete="off" type="date" class="form-control" id="tanggal-kembali" name="tanggal_kembali" required>
 						</div>
 						<div class="col-6 form-group">
 							<label for="kota-asal">Kota Asal</label>
-							<input type="text" class="form-control" placeholder="Masukan kota asal" id="kota-asal" name="kota_asal" required>
+							<input autocomplete="off" type="text" class="form-control" placeholder="Masukan kota asal" id="kota-asal" name="kota_asal" required>
 						</div>
 						<div class="col-6 form-group">
 							<label for="pilih-paket">Pilih Paket Wisata</label>
@@ -69,17 +69,17 @@ if (isset($_POST['submit']))
 						</div>
 						<div class="col-12">
 							<div class="form-check form-switch ">
-								<input class="form-check-input toggle-supir" type="checkbox" id="flexSwitchCheckDefault">
+								<input autocomplete="off" class="form-check-input toggle-supir" type="checkbox" id="flexSwitchCheckDefault">
 								<label class="form-check-label" for="flexSwitchCheckDefault">Menggunakan Supir</label>
 							</div>
 						</div>
 						<div class="col-6 form-group group-supir d-none">
 							<label for="nama-supir">Nama Supir</label>
-							<input type="text" class="form-control" placeholder="Masukan nama supir" id="nama-supir" name="nama_supir">
+							<input autocomplete="off" type="text" class="form-control" placeholder="Masukan nama supir" id="nama-supir" name="nama_supir">
 						</div>
 						<div class="col-6 form-group group-supir d-none">
 							<label for="no-hp-supir">No. HP Supir</label>
-							<input type="number" class="form-control" placeholder="Masukan No. HP" id="no-hp-supir" name="no_hp_supir">
+							<input autocomplete="off" type="number" class="form-control" placeholder="Masukan No. HP" id="no-hp-supir" name="no_hp_supir">
 						</div>
 						<div class="col-6 form-group">
 							<label for="pilih-kendaraan">Pilih Kendaraan</label>
@@ -92,12 +92,12 @@ if (isset($_POST['submit']))
 						</div>
 						<div class="col-6 form-group">
 							<label for="total-harga">Total Harga</label>
-							<input type="number" class="form-control" placeholder="Masukan total harga" id="total-harga" name="total_harga">
+							<input autocomplete="off" type="number" class="form-control" placeholder="Masukan total harga" id="total-harga" name="total_harga">
 						</div>
 						<div class="form-group">
 							<label for="gambar-mobil">Gambar Penyewa</label>
 							<br>
-							<input type="file" accept="image/*" class="form-control-file" id="gambar-penyewa" name="gambar">
+							<input autocomplete="off" type="file" accept="image/*" class="form-control-file" id="gambar-penyewa" name="gambar">
 						</div>
 						<div class="container wrapper-button">
 							<button type="submit" class="button button-green" form="form-data" name="submit">Submit</button>

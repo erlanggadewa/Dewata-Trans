@@ -27,13 +27,13 @@ $daftarPaket = fetchData("SELECT * FROM paket_wisata");
           <div class="container g-3">
             <div class="row">
               <div class="col-12 form-group">
-                <input type="hidden" value="<?= $idTarget ?>" name="idTarget">
+                <input autocomplete="off" type="hidden" value="<?= $idTarget ?>" name="idTarget">
                 <label for="nama-paket">Nama Paket Wisata</label>
-                <input type="text" class="form-control" placeholder="Input nama paket" id="nama-paket" name="nama-paket" value="<?= $data[0]['nama_paket'] ?>" required>
+                <input autocomplete="off" type="text" class="form-control" placeholder="Input nama paket" id="nama-paket" name="nama-paket" value="<?= $data[0]['nama_paket'] ?>" required>
               </div>
               <div class="col-12 form-group">
                 <label for="tempat-wisata">Tempat Wisata</label>
-                <input type="text" class="form-control" placeholder="Input tujuan" id="tempat-wisata" name="tempat-wisata" value="<?= $data[0]['tujuan'] ?>" required>
+                <input autocomplete="off" type="text" class="form-control" placeholder="Input tujuan" id="tempat-wisata" name="tempat-wisata" value="<?= $data[0]['tujuan'] ?>" required>
               </div>
               <div class="col-12 form-group">
                 <label for="fasilitas">Fasilitas</label>
@@ -53,7 +53,7 @@ $daftarPaket = fetchData("SELECT * FROM paket_wisata");
         <h4 class="container-fluid">Daftar Paket Wisata</h4>
         <div class="container-fluid">
           <div class="col-8 form-group ">
-            <input type="text" class="form-control" id="search" placeholder="Masukan keyword ...">
+            <input autocomplete="off" type="text" class="form-control" id="search" placeholder="Masukan keyword ...">
           </div>
           <div class="row wrapper-table" style="overflow-x:auto;">
             <?php if ($daftarPaket) : ?>

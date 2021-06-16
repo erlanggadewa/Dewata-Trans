@@ -29,28 +29,27 @@ $listKendaraan = fetchData("SELECT * FROM data_kendaraan");
 						<div class="row">
 							<div class="col-12 form-group">
 								<label for="name-merk">Nama Merk</label>
-								<input type="text" class="form-control" placeholder="Enter merk" id="name-merk" name="nama_merek" value="<?= $data[0]['merek_mobil'] ?>">
-
+								<input type="text" class="form-control" placeholder="Enter merk" id="name-merk" name="nama_merek" value="<?= $data[0]['merek_mobil'] ?>" autocomplete="off">
 							</div>
 							<div class="col-12 form-group">
 								<label for="nama-mobil">Nama Mobil</label>
-								<input type="text" class="form-control" placeholder="Enter name" id="nama-mobil" name="nama_mobil" value="<?= $data[0]['nama_mobil'] ?>">
+								<input type="text" class="form-control" placeholder="Enter name" id="nama-mobil" name="nama_mobil" value="<?= $data[0]['nama_mobil'] ?>" autocomplete="off">
 							</div>
 							<div class="col-6 form-group">
 								<label for="warna-mobil">Warna Mobil</label>
-								<input type="text" class="form-control" placeholder="Enter color" id="warna-mobil" name="warna_mobil" value="<?= $data[0]['warna_mobil'] ?>">
+								<input type="text" class="form-control" placeholder="Enter color" id="warna-mobil" name="warna_mobil" value="<?= $data[0]['warna_mobil'] ?>" autocomplete="off">
 							</div>
 							<div class="col-6 form-group">
 								<label for="jumlah-kursi">Jumlah Kursi</label>
-								<input type="number" class="form-control" placeholder="Enter number" id="jumlah-kursi" name="jumlah_kursi" value="<?= $data[0]['jumlah_kursi'] ?>">
+								<input type="number" class="form-control" placeholder="Enter number" id="jumlah-kursi" name="jumlah_kursi" value="<?= $data[0]['jumlah_kursi'] ?>" autocomplete="off">
 							</div>
 							<div class="col-6 form-group">
 								<label for="nomor-polisi">Nomor Polisi</label>
-								<input type="text" class="form-control" placeholder="Enter color" id="nomor-polisi" name="nomor_polisi" value="<?= $data[0]['nomor_polisi'] ?>" readonly>
+								<input type="text" class="form-control" placeholder="Enter color" id="nomor-polisi" name="nomor_polisi" value="<?= $data[0]['nomor_polisi'] ?>" readonly autocomplete="off">
 							</div>
 							<div class="col-6 form-group">
 								<label for="tahun-beli">Tahun Beli</label>
-								<input type="number" class="form-control" placeholder="Enter number" id="tahun-beli" name="tahun_beli" value="<?= $data[0]['tahun_beli'] ?>">
+								<input type="number" class="form-control" placeholder="Enter number" id="tahun-beli" name="tahun_beli" value="<?= $data[0]['tahun_beli'] ?>" autocomplete="off">
 							</div>
 							<div class="form-group">
 								<label for="gambar-mobil">Gambar Mobil</label>
@@ -58,8 +57,8 @@ $listKendaraan = fetchData("SELECT * FROM data_kendaraan");
 								<img src="<?= $data[0]['gambar_mobil'] ?>" alt="" width="200px">
 								<br>
 								<br>
-								<input type="hidden" class="form-control-file" id="gambar-mobil" name="gambar_lama" value="<?= $data[0]['gambar_mobil'] ?>">
-								<input type="file" accept="image/*" class="form-control-file" id="gambar-mobil" name="gambar" value="<?= $data[0]['gambar_mobil'] ?>">
+								<input autocomplete="off" type="hidden" class="form-control-file" id="gambar-mobil" name="gambar_lama" value="<?= $data[0]['gambar_mobil'] ?>">
+								<input autocomplete="off" type="file" accept="image/*" class="form-control-file" id="gambar-mobil" name="gambar" value="<?= $data[0]['gambar_mobil'] ?>">
 							</div>
 							<div class="container wrapper-button">
 								<button type="submit" class="button button-green" name="submit_edit" form="form-data">Edit</button>

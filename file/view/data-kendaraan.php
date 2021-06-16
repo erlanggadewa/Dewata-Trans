@@ -27,32 +27,32 @@ $data = fetchData("SELECT nomor_polisi, nama_mobil, merek_mobil, status FROM dat
 						<div class="row">
 							<div class="col-12 form-group">
 								<label for="name-merk">Nama Merk</label>
-								<input type="text" class="form-control" placeholder="Masukan merek" id="name-merk" name="nama_merek">
+								<input autocomplete="off" type="text" class="form-control" placeholder="Masukan merek" id="name-merk" name="nama_merek">
 							</div>
 							<div class="col-12 form-group">
 								<label for="nama-mobil">Nama Mobil</label>
-								<input type="text" class="form-control" placeholder="Masukan nama mobil" id="nama-mobil" name="nama_mobil">
+								<input autocomplete="off" type="text" class="form-control" placeholder="Masukan nama mobil" id="nama-mobil" name="nama_mobil">
 							</div>
 							<div class="col-6 form-group">
 								<label for="warna-mobil">Warna Mobil</label>
-								<input type="text" class="form-control" placeholder="Masukan warna mobil" id="warna-mobil" name="warna_mobil">
+								<input autocomplete="off" type="text" class="form-control" placeholder="Masukan warna mobil" id="warna-mobil" name="warna_mobil">
 							</div>
 							<div class="col-6 form-group">
 								<label for="jumlah-kursi">Jumlah Kursi</label>
-								<input type="number" class="form-control" placeholder="Masukan jumlah kursi" id="jumlah-kursi" name="jumlah_kursi">
+								<input autocomplete="off" type="number" class="form-control" placeholder="Masukan jumlah kursi" id="jumlah-kursi" name="jumlah_kursi">
 							</div>
 							<div class="col-6 form-group">
 								<label for="nomor-polisi">Nomor Polisi</label>
-								<input type="text" class="form-control" placeholder="Masukan nomor polisi" id="nomor-polisi" name="nomor_polisi">
+								<input autocomplete="off" type="text" class="form-control" placeholder="Masukan nomor polisi" id="nomor-polisi" name="nomor_polisi">
 							</div>
 							<div class="col-6 form-group">
 								<label for="tahun-beli">Tahun Beli</label>
-								<input type="number" class="form-control" placeholder="Masukan tahun beli" id="tahun-beli" name="tahun_beli">
+								<input autocomplete="off" type="number" class="form-control" placeholder="Masukan tahun beli" id="tahun-beli" name="tahun_beli">
 							</div>
 							<div class="form-group">
 								<label for="gambar-mobil">Gambar Mobil</label>
 								<br>
-								<input type="file" class="form-control-file" id="gambar-mobil" name="gambar" accept="image/*">
+								<input autocomplete="off" type="file" class="form-control-file" id="gambar-mobil" name="gambar" accept="image/*">
 							</div>
 							<div class="container wrapper-button">
 								<button type="submit" class="button button-green" name="submit" form="form-data">Submit</button>
@@ -69,7 +69,7 @@ $data = fetchData("SELECT nomor_polisi, nama_mobil, merek_mobil, status FROM dat
 				<h4 class="container-fluid">Data Kendaraan</h4>
 				<div class="container-fluid">
 					<div class="col-8 form-group ">
-						<input type="text" class="form-control" id="search" placeholder="Masukan keyword ...">
+						<input autocomplete="off" type="text" class="form-control" id="search" placeholder="Masukan keyword ...">
 					</div>
 					<div class="row wrapper-table" style="overflow-x:auto;" id="wrapper-search">
 

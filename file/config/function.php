@@ -402,6 +402,39 @@ function findDataWisata($keyword)
     return fetchData($jenisQuery);
 }
 
+function rekapData($bulan, $tahun)
+{
+    $arrData = [];
+    $rekap_rental = fetchData("SELECT rental.nama_mobil,
+		rental.tanggal_sewa,
+		SUM(rental.total_harga_rental) AS 'total_harga'
+		FROM rental
+		WHERE MONTH(rental.tanggal_sewa) = $bulan AND YEAR(rental.tanggal_sewa) = $tahun
+		GROUP BY rental.nama_mobil;");
+    $arrData[] = $rekap_rental;
+    $rekap_wisata = fetchData("SELECT order_wisata.nama_mobil,
+		order_wisata.tanggal_sewa,
+		SUM(order_wisata.total_harga_wisata) AS 'total_harga'
+		FROM order_wisata
+		WHERE MONTH(order_wisata.tanggal_sewa) = $bulan AND YEAR(order_wisata.tanggal_sewa) = $tahun
+		GROUP BY order_wisata.nama_mobil;");
+    $arrData[] = $rekap_wisata;
+    return $arrData;
+}
+
+function toMonthName($number)
+{
+    // PHP program to convert number to month name
+    // Declare month number and initialize it
+    $monthNum = $number;
+    // Create date object to store the DateTime format
+    $dateObj = DateTime::createFromFormat('!m', $monthNum);
+    // Store the month name to variable
+    return $monthName = $dateObj->format('F');
+}
+
+
+
 // * FUNCTION AKUN
 function resetAkun($keyword)
 {
@@ -441,6 +474,7 @@ function loginAccount($jenisQuery, $data)
         if (password_verify($data["password"], $rowData["password"])) {
             $_SESSION["login"] = true;
             if (isset($data["remember"])) {
+                setcookie('login', 'true', time() + 86400, '/'); // ! Setting cookie 1 hari
                 setcookie('login', 'true', time() + 86400, '/'); // ! Setting cookie 1 hari
             }
             header("Location: file/view/dashboard.php");
