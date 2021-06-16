@@ -1,5 +1,4 @@
 <?php
-session_start();
 include "function.php";
 cekLogin();
 
@@ -13,8 +12,7 @@ if (!$_SESSION["login"]) {
 // * DELETE SESSION
 $_SESSION = [];
 session_unset();
-session_regenerate_id(true);
-session_unset();
+
 session_destroy();
 session_write_close();
 

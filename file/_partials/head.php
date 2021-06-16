@@ -35,7 +35,7 @@ $data = fetchData("SELECT * FROM `data_akun`");
 					</div>
 					<navbar class="navbar">
 						<div class="grup-nav dashboard">
-							<i class="fas fa-house-user" data-ref="dashboard.php" onclick="window.location='index.php'">
+							<i class="fas fa-house-user" data-ref="dashboard.php" onclick="window.location='dashboard.php'">
 								<span data-ref="dashboard.php">&nbsp;Dashboard</span>
 							</i>
 						</div>
