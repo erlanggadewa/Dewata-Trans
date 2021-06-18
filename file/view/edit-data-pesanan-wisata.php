@@ -4,11 +4,17 @@ include "../_partials/head.php";
 
 
 if (isset($_POST['submit'])) {
-	editDataWisata($_POST);
-	echo "<script>
-	alert('Data Berhasil Diedit');
-	location.href = 'data-pesanan-wisata.php';
-	</script>";
+	if (editDataWisata($_POST) >= 1) {
+		echo "<script>
+		alert('Data Berhasil Diedit');
+		location.href = 'data-pesanan-wisata.php';
+		</script>";
+	} else {
+		echo "<script>
+		alert('Data Gagal Diedit');
+		location.href = 'data-pesanan-wisata.php';
+		</script>";
+	}
 }
 
 $detail_Id = $_POST['idTarget'];

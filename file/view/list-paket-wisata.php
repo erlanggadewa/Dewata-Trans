@@ -2,9 +2,14 @@
 include "../_partials/head.php";
 
 if (isset($_POST['submit']))
-	if (inputListPaket($_POST))
+	if (inputListPaket($_POST) >= 1)
 		echo "<script>  
 		alert('Data Berhasil Ditambahkan');
+		location.href = 'list-paket-wisata.php';
+		</script>";
+	else
+		echo "<script>  
+		alert('Data Gagal Ditambahkan');
 		location.href = 'list-paket-wisata.php';
 		</script>";
 

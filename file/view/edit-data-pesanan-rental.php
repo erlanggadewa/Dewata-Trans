@@ -2,12 +2,17 @@
 include "../_partials/head.php";
 
 if (isset($_POST['submit'])) {
-
-  editDataRental($_POST);
-  echo "<script>
-  alert('Data Berhasil Diedit');
-  location.href = 'data-pesanan-rental.php';
-  </script>";
+  if (editDataRental($_POST) >= 1) {
+    echo "<script>
+    alert('Data Berhasil Diedit');
+    location.href = 'data-pesanan-rental.php';
+    </script>";
+  } else {
+    echo "<script>
+    alert('Data Gagal Diedit');
+    location.href = 'data-pesanan-rental.php';
+    </script>";
+  }
 }
 
 $detail_Id = $_POST['idTarget'];
@@ -40,7 +45,7 @@ $statusKendaraan = fetchData("SELECT nama_mobil, nomor_polisi FROM data_kendaraa
             </div>
             <div class="col-6 form-group">
               <label for="no-hp">No. HP</label>
-              <input autocomplete="off" required type="number" class="form-control" placeholder="Enter phone number" id="no-hp" name="no_hp" value="<?= $data[0]['no_hp'] ?>">
+              <input autocomplete="off" required type="text" class="form-control" placeholder="Enter phone number" id="no-hp" name="no_hp" value="<?= $data[0]['no_hp'] ?>">
             </div>
             <div class="col-6 form-group">
               <label for="gender">Jenis Kelamin</label>
@@ -75,7 +80,7 @@ $statusKendaraan = fetchData("SELECT nama_mobil, nomor_polisi FROM data_kendaraa
               <input autocomplete="off" required type="text" class="form-control" placeholder="Enter destination" id="kota-tujuan" name="kota_tujuan" value="<?= $data[0]['kota_tujuan'] ?>">
             </div>
             <div class="col-12">
-              <div class="form-check form-switch ">
+              <div class="form-check form-switch d-none">
                 <input autocomplete="off" class="form-check-input toggle-supir" type="checkbox" checked id="flexSwitchCheckDefault">
                 <label class="form-check-label" for="flexSwitchCheckDefault">Menggunakan Supir</label>
               </div>
@@ -86,7 +91,7 @@ $statusKendaraan = fetchData("SELECT nama_mobil, nomor_polisi FROM data_kendaraa
             </div>
             <div class="col-6 form-group group-supir ">
               <label for="no-hp-supir">No. HP Supir</label>
-              <input autocomplete="off" type="number" class="form-control" placeholder="Enter color" id="no-hp-supir" name="no_hp_supir" value="<?= $data[0]['no_hp_supir'] ?>">
+              <input autocomplete="off" type="text" class="form-control" placeholder="Enter color" id="no-hp-supir" name="no_hp_supir" value="<?= $data[0]['no_hp_supir'] ?>">
             </div>
             <div class="col-6 form-group">
               <label for="pilih-kendaraan">Pilih Kendaraan</label>

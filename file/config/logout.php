@@ -17,6 +17,8 @@ session_destroy();
 session_write_close();
 
 // * DELETE COOKIE
-setcookie('login', '', time() - 3600, '/');
-
+$id = hash('sha512', 'id');
+$value = hash('sha512', 'value');
+setcookie($id, '', time() - 86400, '/'); // ! Setting cookie 1 hari
+setcookie($value, '', time() - 86400, '/'); // ! Setting cookie 1 hari
 header("Location: ../../index.php");

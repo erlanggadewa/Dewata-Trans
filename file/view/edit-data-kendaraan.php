@@ -2,9 +2,14 @@
 include "../_partials/head.php";
 
 if (isset($_POST['submit_edit'])) {
-	editDataKendaraan($_POST);
-	echo "<script>
-            alert('Data Berhasil Edit');
+	if (editDataKendaraan($_POST) >= 1)
+		echo "<script>
+            alert('Data Berhasil Diubah');
+            location.href = 'data-kendaraan.php';
+        </script>";
+	else
+		echo "<script>
+            alert('Data Gagal Diubah');
             location.href = 'data-kendaraan.php';
         </script>";
 }

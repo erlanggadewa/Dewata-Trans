@@ -2,16 +2,12 @@
 
 Dewata Trans
 
-Erlangga : Backend
-Adam & Argu : Frontend
-Ismi & Regina : desain, proposal, ppt, bahan2 website
+Erlangga ~ Full Stack Developer
+NIM : 6706201053
+Kelas : D3IF 44-03
 
 Link Website :
 
-1. dewatatrans.nasiwebhost.com (PHP 8.0)
-2. dewatatrans.nasihosting.com (PHP 7.4)
-   Username : admin
-   Password : dewatamantul
-
-Folder aset web Dewata : https://drive.google.com/drive/folders/1tFth79v79R5u8HtaRFwSUsJlR4sxDuZ1?usp=sharing
-Design app Dewata : https://www.figma.com/file/PjThKKItVJaagyQO6rFs5U/Dewata-Trans?node-id=0%3A1
+1. https://dewatatrans.000webhostapp.com/
+   Username : erlangga
+   Password : erlangga

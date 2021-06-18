@@ -102,15 +102,13 @@ $nameMonth = toMonthName($bulan);
 								<tr>
 									<th>No.</th>
 									<th>Kendaraan</th>
-									<th>Tgl. Sewa</th>
-									<th>Total Penghasilan</th>
+									<th>Penghasilan</th>
 							<tbody>
 								<?php $nomor = 1; ?>
 								<?php foreach ($rekap[0] as $row) : ?>
 									<tr>
 										<td><?= $nomor++ ?></td>
 										<td><?= $row['nama_mobil'] ?></td>
-										<td><?= $row['tanggal_sewa'] ?></td>
 										<td><?= $row['total_harga'] ?></td>
 										</td>
 									</tr>
@@ -135,15 +133,13 @@ $nameMonth = toMonthName($bulan);
 								<tr>
 									<th>No.</th>
 									<th>Kendaraan</th>
-									<th>Tgl. Sewa</th>
-									<th>Total Penghasilan</th>
+									<th>Penghasilan</th>
 							<tbody>
 								<?php $nomor = 1; ?>
 								<?php foreach ($rekap[1] as $row) : ?>
 									<tr>
 										<td><?= $nomor++ ?></td>
 										<td><?= $row['nama_mobil'] ?></td>
-										<td><?= $row['tanggal_sewa'] ?></td>
 										<td><?= $row['total_harga'] ?></td>
 										</td>
 									</tr>

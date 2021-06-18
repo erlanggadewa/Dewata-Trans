@@ -111,7 +111,6 @@ function inputDataRental($data)
 
     $query = "INSERT INTO $tb_data_rental VALUES(NULL,'$last_id','$nomor_polisi','$tanggal_sewa','$tanggal_kembali','$kota_asal','$kota_tujuan','$nama_supir','$no_hp_supir','$kendaraan','$total_harga')";
     mysqli_query($conn, $query);
-
     return mysqli_affected_rows($conn);
 }
 

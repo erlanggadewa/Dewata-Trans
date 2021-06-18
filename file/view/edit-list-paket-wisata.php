@@ -7,6 +7,12 @@ if (isset($_POST['submit']))
 		alert('Data Berhasil Diedit');
 		location.href = 'list-paket-wisata.php';
 		</script>";
+  else
+    echo "<script>  
+		alert('Data Gagal Diedit');
+		location.href = 'list-paket-wisata.php';
+		</script>";
+
 $idTarget = $_POST['idTarget'];
 $data = fetchData("SELECT * FROM paket_wisata WHERE id_paket=$idTarget");
 $daftarPaket = fetchData("SELECT * FROM paket_wisata");
@@ -55,7 +61,7 @@ $daftarPaket = fetchData("SELECT * FROM paket_wisata");
           <div class="col-8 form-group ">
             <input autocomplete="off" type="text" class="form-control" id="search" placeholder="Masukan keyword ...">
           </div>
-          <div class="row wrapper-table" style="overflow-x:auto;">
+          <div class="row wrapper-table" style="overflow-x:auto;" id="wrapper-search">
             <?php if ($daftarPaket) : ?>
               <table class="styled-table col-12">
                 <thead>
@@ -101,5 +107,5 @@ $daftarPaket = fetchData("SELECT * FROM paket_wisata");
     </div>
   </div>
 </div>
-
+<script src="../../js/ajax-list-paket-wisata.js"></script>
 <?php include "../_partials/foot.php"; ?>

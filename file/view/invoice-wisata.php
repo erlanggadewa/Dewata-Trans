@@ -153,9 +153,9 @@ $data = fetchData(
 					<table>
 						<tr>
 							<td>
-								Dewata Trans.<br />
-								Malang,<br />
-								Indonesia
+								Dewata Trans.<br>
+								Perum Graha Dewata NN2/12A,<br>
+								Malang, Indonesia
 							</td>
 
 							<td>
@@ -182,7 +182,7 @@ $data = fetchData(
 			<tr class="heading">
 				<td>Item</td>
 
-				<td>Price</td>
+				<td>Harga</td>
 			</tr>
 
 			<tr class="item">

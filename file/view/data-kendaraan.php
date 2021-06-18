@@ -1,11 +1,16 @@
 <?php
 include "../_partials/head.php";
 if (isset($_POST['submit'])) {
-	if (inputDataKendaraan($_POST))
+	if (inputDataKendaraan($_POST) >= 1)
 		echo "<script>
             alert('Data Berhasil Ditambahkan');
             location.href = 'data-kendaraan.php';
         </script>";
+	else
+		echo "<script>
+								alert('Data Gagal Ditambahkan');
+								location.href = 'data-kendaraan.php';
+						</script>";
 }
 $data = fetchData("SELECT nomor_polisi, nama_mobil, merek_mobil, status FROM data_kendaraan");
 

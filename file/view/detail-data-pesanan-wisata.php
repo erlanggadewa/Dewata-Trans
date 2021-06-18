@@ -35,7 +35,7 @@ Tanggal Sewa          :     <?= $data[0]['tanggal_sewa'] ?>
 
 Tanggal Kembali     :     <?= $data[0]['tanggal_kembali'] ?>
 
-Kota Asal                 :      <?= $data[0]['kota_asal'] ?>
+Kota Asal                 :     <?= $data[0]['kota_asal'] ?>
 
 Nama Paket            :     <?= $data[0]['nama_paket'] ?>
 

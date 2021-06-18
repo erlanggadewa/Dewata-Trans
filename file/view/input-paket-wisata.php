@@ -5,9 +5,14 @@ $dataPaket = fetchData("SELECT nama_paket FROM paket_wisata");
 $statusKendaraan = fetchData("SELECT nama_mobil, nomor_polisi FROM data_kendaraan WHERE status=1");
 
 if (isset($_POST['submit']))
-	if (inputDataWisata($_POST))
+	if (inputDataWisata($_POST) >= 1)
 		echo "<script>
 		alert('Data Berhasil Ditambahkan');
+		location.href = 'input-paket-wisata.php';
+		</script>";
+	else
+		echo "<script>
+		alert('Data Gagal Ditambahkan');
 		location.href = 'input-paket-wisata.php';
 		</script>";
 
@@ -79,7 +84,7 @@ if (isset($_POST['submit']))
 						</div>
 						<div class="col-6 form-group group-supir d-none">
 							<label for="no-hp-supir">No. HP Supir</label>
-							<input autocomplete="off" type="number" class="form-control" placeholder="Masukan No. HP" id="no-hp-supir" name="no_hp_supir">
+							<input autocomplete="off" type="text" class="form-control" placeholder="Masukan No. HP" id="no-hp-supir" name="no_hp_supir">
 						</div>
 						<div class="col-6 form-group">
 							<label for="pilih-kendaraan">Pilih Kendaraan</label>

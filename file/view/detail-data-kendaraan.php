@@ -23,6 +23,8 @@ $data = fetchData("SELECT * FROM data_kendaraan WHERE nomor_polisi = '$detail_Id
 Nama			:	<?= $data[0]['nama_mobil'] ?> 
 Merk			:	<?= $data[0]['merek_mobil'] ?> 
 Nomor Polisi 	:	<?= $data[0]['nomor_polisi'] ?> 
+Jumlah Kursi	 	:	<?= $data[0]['jumlah_kursi'] ?> 
+Warna Mobil	 	:	<?= $data[0]['warna_mobil'] ?> 
 Tahun Beli		:	<?= $data[0]['tahun_beli'] ?></span></pre>
 				</div>
 				<div class="wrapper-button g-6">

@@ -84,7 +84,7 @@ if (isset($_SESSION["id_akun"])) {
 						</div>
 						<div class="grup-nav">
 							<h6>Logout Akun</h6>
-							<i class="fas fa-user-circle admin-icon" onclick="confirm('YAKIN INGIN LOGOUT ?') ? (window.location='../config/logout.php') : (false)">
+							<i class="fas fa-user-circle admin-icon" onclick="confirm('Yakin Ingin Logout ?') ? (window.location='../config/logout.php') : (false)">
 								<span>&nbsp;&nbsp;<?= $data[0]['username'] ?></span>
 							</i>
 
