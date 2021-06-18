@@ -96,8 +96,8 @@ $nameMonth = toMonthName($bulan);
 			<h4 class="container-fluid">Rekap Rental</h4>
 			<div class="container-fluid">
 				<div class="row wrapper-table" style="overflow-x:auto; ">
-					<table class="styled-table col-12">
-						<?php if ($rekap[0]) : ?>
+					<?php if ($rekap[0]) : ?>
+						<table class="styled-table col-12">
 							<thead>
 								<tr>
 									<th>No.</th>
@@ -113,11 +113,11 @@ $nameMonth = toMonthName($bulan);
 										</td>
 									</tr>
 								<?php endforeach; ?>
-							<?php else : ?>
-								<h3 style=" text-align: center; margin: 50px 0">Data Kosong</h3>
-							<?php endif; ?>
 							</tbody>
-					</table>
+						</table>
+					<?php else : ?>
+						<h3 style=" text-align: center; margin: 50px 0">Data Kosong</h3>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>
@@ -127,8 +127,8 @@ $nameMonth = toMonthName($bulan);
 			<h4 class="container-fluid">Rekap Wisata</h4>
 			<div class="container-fluid">
 				<div class="row wrapper-table" style="overflow-x:auto; ">
-					<table class="styled-table col-12">
-						<?php if ($rekap[1]) : ?>
+					<?php if ($rekap[1]) : ?>
+						<table class="styled-table col-12">
 							<thead>
 								<tr>
 									<th>No.</th>
@@ -144,11 +144,11 @@ $nameMonth = toMonthName($bulan);
 										</td>
 									</tr>
 								<?php endforeach; ?>
-							<?php else : ?>
-								<h3 style=" text-align: center; margin: 50px 0">Data Kosong</h3>
-							<?php endif; ?>
 							</tbody>
-					</table>
+						<?php else : ?>
+							<h3 style=" text-align: center; margin: 50px 0">Data Kosong</h3>
+						</table>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>
